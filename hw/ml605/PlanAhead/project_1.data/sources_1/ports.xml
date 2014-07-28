@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="pci_exp_rxp">
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="pci_exp_rxn">
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="pci_exp_txp">
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="pci_exp_txn">
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="sys_clk_p" Dir="IN"/>
+		<Port Id="sys_clk_n" Dir="IN"/>
+		<Port Id="sys_reset_n" Dir="IN"/>
+		<Port Id="pcie_link_status" Dir="OUT"/>
+		<Port Id="heartbeat" Dir="OUT"/>
+		<DiffPair Pos="pci_exp_rxp[3]" Neg="pci_exp_rxn[3]"/>
+		<DiffPair Pos="pci_exp_rxp[2]" Neg="pci_exp_rxn[2]"/>
+		<DiffPair Pos="pci_exp_rxp[1]" Neg="pci_exp_rxn[1]"/>
+		<DiffPair Pos="pci_exp_rxp[0]" Neg="pci_exp_rxn[0]"/>
+		<DiffPair Pos="pci_exp_txp[3]" Neg="pci_exp_txn[3]"/>
+		<DiffPair Pos="pci_exp_txp[2]" Neg="pci_exp_txn[2]"/>
+		<DiffPair Pos="pci_exp_txp[1]" Neg="pci_exp_txn[1]"/>
+		<DiffPair Pos="pci_exp_txp[0]" Neg="pci_exp_txn[0]"/>
+		<DiffPair Pos="sys_clk_p" Neg="sys_clk_n"/>
+	</Ifc>
+</Interface>
+

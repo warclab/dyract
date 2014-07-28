@@ -1,0 +1,228 @@
+INST "pcie" AREA_GROUP = "pblock_pcie";
+AREA_GROUP "pblock_pcie" RANGE=SLICE_X194Y50:SLICE_X221Y149;
+AREA_GROUP "pblock_pcie" RANGE=DSP48_X19Y20:DSP48_X19Y59;
+AREA_GROUP "pblock_pcie" RANGE=PCIE_X1Y0:PCIE_X1Y0;
+AREA_GROUP "pblock_pcie" RANGE=RAMB18_X13Y20:RAMB18_X14Y59;
+AREA_GROUP "pblock_pcie" RANGE=RAMB36_X13Y10:RAMB36_X14Y29;
+##-----------------------------------------------------------------------------
+##
+## (c) Copyright 2009-2011 Xilinx, Inc. All rights reserved.
+##
+## This file contains confidential and proprietary information
+## of Xilinx, Inc. and is protected under U.S. and
+## international copyright and other intellectual property
+## laws.
+##
+## DISCLAIMER
+## This disclaimer is not a license and does not grant any
+## rights to the materials distributed herewith. Except as
+## otherwise provided in a valid license issued to you by
+## Xilinx, and to the maximum extent permitted by applicable
+## law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+## WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+## AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+## BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+## INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+## (2) Xilinx shall not be liable (whether in contract or tort,
+## including negligence, or under any other theory of
+## liability) for any loss or damage of any kind or nature
+## related to, arising under or in connection with these
+## materials, including for any direct, or any indirect,
+## special, incidental, or consequential loss or damage
+## (including loss of data, profits, goodwill, or any type of
+## loss or damage suffered as a result of any action brought
+## by a third party) even if such damage or loss was
+## reasonably foreseeable or Xilinx had been advised of the
+## possibility of the same.
+##
+## CRITICAL APPLICATIONS
+## Xilinx products are not designed or intended to be fail-
+## safe, or for use in any application requiring fail-safe
+## performance, such as life-support or safety devices or
+## systems, Class III medical devices, nuclear facilities,
+## applications related to the deployment of airbags, or any
+## other applications that could lead to death, personal
+## injury, or severe property or environmental damage
+## (individually and collectively, "Critical
+## Applications"). Customer assumes the sole risk and
+## liability of any use of Xilinx products in Critical
+## Applications, subject only to applicable laws and
+## regulations governing limitations on product liability.
+##
+## THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+## PART OF THIS FILE AT ALL TIMES.
+##
+##-----------------------------------------------------------------------------
+## Project    : Series-7 Integrated Block for PCI Express
+## File       : xilinx_pcie_2_1_ep_7x_04_lane_gen1_xc7vx485t-ffg1761-2_VC707.ucf
+## Version    : 1.8
+
+###############################################################################
+# Define Device, Package And Speed Grade
+###############################################################################
+
+CONFIG PART = xc7vx485t-ffg1761-2;
+
+#########################################################################################################################
+# User Constraints
+#########################################################################################################################
+
+###############################################################################
+# User Time Names / User Time Groups / Time Specs
+###############################################################################
+
+###############################################################################
+# User Physical Constraints
+###############################################################################
+
+
+###############################################################################
+# Pinout and Related I/O Constraints
+###############################################################################
+
+#
+# SYS reset (input) signal.  The sys_reset_n signal should be
+# obtained from the PCI Express interface if possible.  For
+# slot based form factors, a system reset signal is usually
+# present on the connector.  For cable based form factors, a
+# system reset signal may not be available.  In this case, the
+# system reset signal must be generated locally by some form of
+# supervisory circuit.  You may change the IOSTANDARD and LOC
+# to suit your requirements and VCCO voltage banking rules.
+# Some 7 series devices do not have 3.3 V I/Os available.
+# Therefore the appropriate level shift is required to operate
+# with these devices that contain only 1.8 V banks.
+#
+
+NET "sys_reset_n" TIG;
+NET "sys_reset_n" NODELAY = "TRUE";
+NET "sys_reset_n" LOC = AV35;
+NET "sys_reset_n" IOSTANDARD = LVCMOS18;
+NET "sys_reset_n" PULLUP;
+
+#
+# SYS clock 100 MHz (input) signal. The sys_clk_p and sys_clk_n
+# signals are the PCI Express reference clock. Virtex-7 GT
+# Transceiver architecture requires the use of a dedicated clock
+# resources (FPGA input pins) associated with each GT Transceiver.
+# To use these pins an IBUFDS primitive (refclk_ibuf) is
+# instantiated in user's design.
+# Please refer to the Virtex-7 GT Transceiver User Guide
+# (UG) for guidelines regarding clock resource selection.
+#
+
+#NET "sys_clk_p" LOC = AB7;
+#NET "sys_clk_n" LOC = AB8;
+INST "pcie/refclk_ibuf" LOC = IBUFDS_GTE2_X1Y5;
+
+#
+# Transceiver instance placement.  This constraint selects the
+# transceivers to be used, which also dictates the pinout for the
+# transmit and receive differential pairs.  Please refer to the
+# Virtex-7 GT Transceiver User Guide (UG) for more information.
+#
+
+# PCIe Lane 0
+INST "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X1Y11;
+# PCIe Lane 1
+INST "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X1Y10;
+# PCIe Lane 2
+INST "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X1Y9;
+# PCIe Lane 3
+INST "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X1Y8;
+
+
+#
+# PCI Express Block placement. This constraint selects the PCI Express
+# Block to be used.
+#
+
+INST "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i" LOC = PCIE_X1Y0;
+
+#
+# BlockRAM placement
+#
+INST "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl" LOC = RAMB36_X13Y24;
+INST "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl" LOC = RAMB36_X13Y23;
+INST "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl" LOC = RAMB36_X13Y21;
+INST "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl" LOC = RAMB36_X13Y20;
+
+# Lock down the FIFO
+#INST "pcie_ep/pcie_7x_v1_8_i/FPC_top_i/pr_loader_i/PIO_FPC_i/PIO_EP_FPC_inst/data_transfer_i/fastConfigFIFO_i/U0/xst_fifo_generator/gconvfifo.rf/gbiv5.bi/v6_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1" LOC = RAMB18_X4Y74 ;
+
+
+###############################################################################
+# Timing Constraints
+###############################################################################
+
+NET "pcie/sys_clk" TNM_NET = "SYSCLK";
+NET "pcie/ext_clk.pipe_clock_i/clk_125mhz" TNM_NET = "CLK_125";
+NET "pcie/ext_clk.pipe_clock_i/clk_250mhz" TNM_NET = "CLK_250";
+NET "pcie/ext_clk.pipe_clock_i/userclk1" TNM_NET = "CLK_USERCLK";
+NET "pcie/ext_clk.pipe_clock_i/userclk2" TNM_NET = "CLK_USERCLK2";
+NET "pcie/ext_clk.pipe_clock_i/icap_clk" TNM_NET = "CLK_ICAPCLK";
+NET "pcie/app/ucg/clk0_bufgin" TNM_NET = "CLK_USER";
+
+TIMESPEC TS_SYSCLK = PERIOD "SYSCLK" 100 MHz HIGH 50 %;
+TIMESPEC TS_CLK_250 = PERIOD "CLK_250" TS_SYSCLK * 2.5 HIGH 50 % PRIORITY 1;
+TIMESPEC TS_CLK_125 = PERIOD "CLK_125" TS_SYSCLK * 1.25 HIGH 50 % PRIORITY 2;
+TIMESPEC TS_CLK_USERCLK = PERIOD "CLK_USERCLK" TS_SYSCLK * 2.5 HIGH 50 %;
+TIMESPEC TS_CLK_USERCLK2 = PERIOD "CLK_USERCLK2" TS_SYSCLK * 2.5 HIGH 50 %;
+TIMESPEC TS_CLK_ICAPCLK = PERIOD "CLK_ICAPCLK" TS_SYSCLK  HIGH 50 %;
+TIMESPEC TS_CLK_USER = PERIOD "CLK_USER" 250 MHz HIGH 50 %;
+
+INST "pcie/ext_clk.pipe_clock_i/mmcm_i" LOC = MMCME2_ADV_X1Y2;
+
+PIN "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i.PLPHYLNKUPN" TIG;
+PIN "pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i.PLRECEIVEDHOTRST" TIG;
+
+PIN "pcie/ext_clk.pipe_clock_i/mmcm_i.RST" TIG;
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/user_resetdone*" TIG;
+NET "pcie/ext_clk.pipe_clock_i/pclk_sel" TIG;
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/*" TNM_NET =  FFS "MC_PIPE";
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/*" TNM_NET =  FFS "MC_PIPE";
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/*" TNM_NET =  FFS "MC_PIPE";
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/*" TNM_NET =  FFS "MC_PIPE";
+
+TIMESPEC TS_PIPE_RATE = FROM "MC_PIPE" TS_CLK_USERCLK * 0.5;
+
+
+NET "pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset" TIG;
+          
+NET "heartbeat" LOC = AM39;
+NET "pcie_link_status" LOC = AR37;
+#AREA_GROUP "pblock_ul" RANGE=DSP48_X0Y0:DSP48_X18Y139;
+#AREA_GROUP "pblock_ul" RANGE=RAMB18_X0Y0:RAMB18_X12Y139;
+#AREA_GROUP "pblock_ul" RANGE=RAMB36_X0Y0:RAMB36_X12Y69;
+#INST "ult" AREA_GROUP = "pblock_ult";
+#AREA_GROUP "pblock_ult" RANGE=SLICE_X190Y50:SLICE_X193Y149;
+#AREA_GROUP "pblock_ult" INCLUSIVE=ROUTE;
+#INST "pcie/app/gen1.psg1/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y19;
+#INST "pcie/app/gen1.psg1/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y18;
+#INST "pcie/app/gen2.psg2/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y17;
+#INST "pcie/app/gen2.psg2/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y16;
+#INST "pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X13Y27;
+#INST "pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X13Y28;
+#INST "pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X13Y29;
+#INST "pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X13Y26;
+INST "pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y15;
+INST "pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y14;
+#INST "pcie/app/gen3.psg3/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y13;
+#INST "pcie/app/gen3.psg3/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y12;
+#INST "pcie/app/gen4.psg4/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y10;
+#INST "pcie/app/gen4.psg4/user_wr_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X13Y11;
+INST "ult" AREA_GROUP = "pblock_ult";
+AREA_GROUP "pblock_ult" RANGE=SLICE_X2Y0:SLICE_X193Y349;
+AREA_GROUP "pblock_ult" RANGE=DSP48_X0Y0:DSP48_X18Y139;
+AREA_GROUP "pblock_ult" RANGE=RAMB18_X0Y0:RAMB18_X12Y139;
+AREA_GROUP "pblock_ult" RANGE=RAMB36_X0Y0:RAMB36_X12Y69;
+AREA_GROUP "pblock_ult" INCLUSIVE=ROUTE;
+
+INST "ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y29;
+INST "ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y28;
+INST "ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y27;
+INST "ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y26;
+INST "ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y19;
+INST "ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y17;
+INST "ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y15;
+INST "ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X12Y13;

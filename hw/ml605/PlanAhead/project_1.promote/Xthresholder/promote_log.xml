@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PromoteLog Version="1" Minor="2">
+	<Run Name="thresholder">
+	</Run>
+	<Partitions Names="top|ult">
+	</Partitions>
+	<UserNote Text="">
+	</UserNote>
+</PromoteLog>
+

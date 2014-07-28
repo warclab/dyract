@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PartialReconfig Version="1" Minor="8">
+	<Partitions>
+		<Partition Name="top" Reconfigurable="FALSE">
+			<Partition Name="ult" CurrPRModule="thresholder" Reconfigurable="TRUE">
+				<PRModule Name="thresholder">
+				</PRModule>
+			</Partition>
+		</Partition>
+	</Partitions>
+	<Configs>
+		<Config Name="thresholder" State="INITIAL" RunType="Implementation">
+			<PRConfigInst PRInst="top" State="IMPLEMENT">
+			</PRConfigInst>
+			<PRConfigInst PRInst="ult" PRModule="thresholder" State="IMPLEMENT">
+			</PRConfigInst>
+		</Config>
+	</Configs>
+</PartialReconfig>
+

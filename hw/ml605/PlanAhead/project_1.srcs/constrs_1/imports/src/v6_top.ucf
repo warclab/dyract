@@ -1,0 +1,143 @@
+INST "pcie" AREA_GROUP = "pblock_pcie";
+AREA_GROUP "pblock_pcie" RANGE=SLICE_X138Y85:SLICE_X161Y189;
+AREA_GROUP "pblock_pcie" RANGE=DSP48_X7Y34:DSP48_X7Y75;
+AREA_GROUP "pblock_pcie" RANGE=PCIE_X0Y1:PCIE_X0Y1;
+AREA_GROUP "pblock_pcie" RANGE=RAMB18_X7Y34:RAMB18_X8Y75;
+AREA_GROUP "pblock_pcie" RANGE=RAMB36_X7Y17:RAMB36_X8Y37;
+AREA_GROUP "pblock_pcie" RANGE=TEMAC_X0Y1:TEMAC_X0Y3;
+################################################################################
+#Constrains file for ML605 based switch implementation. The location constrains
+#for the BRAMs were selected based on experiments for timing closure. User is 
+#free to modify these constrains to achieve design goals and timing closure
+################################################################################
+
+###############################################################################
+# Define Device, Package And Speed Grade
+###############################################################################
+CONFIG PART = xc6vlx240t-ff1156-1;
+
+###############################################################################
+# PCIe constraints
+# Core                 : X4 Gen2.
+# External clock input : 100 MHz
+# User clock           : 250 MHz
+# Maximum packet size  : 128 bytes
+###############################################################################
+
+
+###############################################################################
+# Pinout and Related I/O Constraints
+###############################################################################
+
+NET "sys_reset_n" TIG;
+NET "sys_reset_n" NODELAY = "TRUE";
+NET "sys_reset_n" LOC = AE13;
+NET "sys_reset_n" IOSTANDARD = LVCMOS25;
+NET "sys_reset_n" PULLUP;
+#
+#LOC the Differential clock buffer
+#
+#
+# Transceiver instance placement.  This constraint selects the
+# transceivers to be used, which also dictates the pinout for the
+# transmit and receive differential pairs.  Please refer to the
+# Virtex-6 GT Transceiver User Guide (UG) for more information.
+#
+# PCIe Lane 0
+INST "pcie/core/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[0].GTX" LOC = GTXE1_X0Y15;
+
+# PCIe Lane 1
+INST "pcie/core/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[1].GTX" LOC = GTXE1_X0Y14;
+
+# PCIe Lane 2
+INST "pcie/core/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[2].GTX" LOC = GTXE1_X0Y13;
+
+# PCIe Lane 3
+INST "pcie/core/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[3].GTX" LOC = GTXE1_X0Y12;
+#
+#If the user is replacing the x4 core with x8 core, uncomment the following lines
+#
+# PCIe Lane 4
+#INST "st/pcie_top/core*/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[4].GTX" LOC = GTXE1_X0Y11;
+
+# PCIe Lane 5
+#INST "st/pcie_top/core*/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[5].GTX" LOC = GTXE1_X0Y10;
+
+# PCIe Lane 6
+#INST "st/pcie_top/core*/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[6].GTX" LOC = GTXE1_X0Y9;
+
+# PCIe Lane 7
+#INST "st/pcie_top/core*/pcie_2_0_i/pcie_gt_i/gtx_v6_i/no_of_lanes.GTXD[7].GTX" LOC = GTXE1_X0Y8;
+#
+# PCI Express Block placement. This constraint selects the PCI Express
+# Block to be used.
+#
+INST "pcie/core/pcie_2_0_i/pcie_block_i" LOC = PCIE_X0Y1;
+#
+# MMCM Placment. This constraint selects the MMCM Placement
+#
+INST "pcie/core/pcie_clocking_i/mmcm_adv_i" LOC = MMCM_ADV_X0Y7;
+
+###############################################################################
+# Timing Constraints
+###############################################################################
+#
+# Timing requirements and related constraints.
+#
+
+NET "pcie/sys_clk_c" TNM_NET = "SYSCLK";
+NET "pcie/core*/pcie_clocking_i/clk_125" TNM_NET = "CLK_125";
+NET "pcie/core*/TxOutClk_bufg" TNM_NET = "TXOUTCLKBUFG";
+NET "pcie/core*/pcie_clocking_i/clk_250" TNM_NET = "CLK_250";
+NET "pcie/core*/pcie_clocking_i/clk_100" TNM_NET = "CLK_100";
+NET "pcie/app/ucg/clk0_bufgin" TNM_NET = "USER_CLK";
+
+TIMESPEC TS_SYSCLK = PERIOD "SYSCLK" 100 MHz HIGH 50 %;
+TIMESPEC TS_CLK_100 = PERIOD "CLK_100" TS_SYSCLK  HIGH 50 %;
+TIMESPEC TS_USER_CLK = PERIOD "USER_CLK" TS_SYSCLK * 2.5 HIGH 50 % PRIORITY 2;
+TIMESPEC TS_CLK_125 = PERIOD "CLK_125" TS_SYSCLK * 1.25 HIGH 50 % PRIORITY 100;
+TIMESPEC TS_TXOUTCLKBUFG = PERIOD "TXOUTCLKBUFG" 100 MHz HIGH 50 % PRIORITY 100;
+TIMESPEC TS_CLK_250 = PERIOD "CLK_250" TS_SYSCLK * 2.5 HIGH 50 % PRIORITY 1;
+
+NET "pcie/core*/pcie_clocking_i/sel_lnk_rate_d" TIG;
+PIN "pcie/core*/trn_reset_n_int_i.CLR" TIG;
+PIN "pcie/core*/trn_reset_n_i.CLR" TIG;
+PIN "pcie/core*/pcie_clocking_i/mmcm_adv_i.RST" TIG;
+
+#External LED indicators.
+NET "heartbeat" LOC = AC22;
+NET "pcie_link_status" LOC = AE22;
+NET "sys_clk_n" LOC = P5;
+NET "sys_clk_p" LOC = P6;
+INST "ult" AREA_GROUP = "pblock_ult";
+AREA_GROUP "pblock_ult" RANGE=SLICE_X0Y0:SLICE_X137Y239;
+AREA_GROUP "pblock_ult" RANGE=DSP48_X0Y0:DSP48_X6Y95;
+AREA_GROUP "pblock_ult" RANGE=RAMB18_X0Y0:RAMB18_X6Y95;
+AREA_GROUP "pblock_ult" RANGE=RAMB36_X0Y0:RAMB36_X6Y47;
+
+INST "pcie/app/gen1.psg1/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y34;
+INST "pcie/app/gen1.psg1/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y33;
+INST "pcie/app/gen2.psg2/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y32;
+INST "pcie/app/gen2.psg2/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y31;
+INST "pcie/app/gen3.psg3/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y24;
+INST "pcie/app/gen3.psg3/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y23;
+INST "pcie/app/gen4.psg4/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y22;
+INST "pcie/app/gen4.psg4/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y21;
+INST "pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X7Y30;
+INST "pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram" LOC = RAMB36_X7Y29;
+INST "pcie/core/pcie_2_0_i/pcie_bram_i/pcie_brams_rx/num_brams.brams[0].ram/use_ramb36.ramb36" LOC = RAMB36_X7Y28;
+INST "pcie/core/pcie_2_0_i/pcie_bram_i/pcie_brams_rx/num_brams.brams[1].ram/use_ramb36.ramb36" LOC = RAMB36_X7Y27;
+INST "pcie/core/pcie_2_0_i/pcie_bram_i/pcie_brams_tx/num_brams.brams[1].ram/use_ramb36.ramb36" LOC = RAMB36_X7Y26;
+INST "pcie/core/pcie_2_0_i/pcie_bram_i/pcie_brams_tx/num_brams.brams[0].ram/use_ramb36.ramb36" LOC = RAMB36_X7Y25;
+INST "pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y20;
+INST "pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y19;
+INST "pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y18;
+INST "pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X7Y17;
+INST "ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y33;
+INST "ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y31;
+INST "ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y21;
+INST "ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y20;
+INST "ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y17;
+INST "ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y23;
+INST "ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y19;
+INST "ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram" LOC = RAMB36_X6Y18;

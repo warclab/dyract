@@ -1,0 +1,546 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: user_logic_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "user_logic_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "user_logic_top"
+Output Format                      : NGC
+Target Device                      : xc6vlx240t-1-ff1156
+
+---- Source Options
+Top Module Name                    : user_logic_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : NO
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "F:\RESEARCH\2.my_git\prime\hw\ml605\src\ipcore_dir\user_adpt_fifo.v" into library work
+Parsing module <user_adpt_fifo>.
+Analyzing Verilog file "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic_if\user_logic_adapter.v" into library work
+Parsing module <user_logic_adapter>.
+Analyzing Verilog file "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic\slicer\user_logic.v" into library work
+Parsing module <user_logic>.
+Analyzing Verilog file "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic_if\user_logic_top.v" into library work
+Parsing module <user_logic_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <user_logic_top>.
+
+Elaborating module <user_logic_adapter>.
+
+Elaborating module <user_adpt_fifo>.
+WARNING:HDLCompiler:1499 - "F:\RESEARCH\2.my_git\prime\hw\ml605\src\ipcore_dir\user_adpt_fifo.v" Line 39: Empty module <user_adpt_fifo> remains a black box.
+
+Elaborating module <user_logic>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <user_logic_top>.
+    Related source file is "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic_if\user_logic_top.v".
+    Summary:
+	no macro.
+Unit <user_logic_top> synthesized.
+
+Synthesizing Unit <user_logic_adapter>.
+    Related source file is "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic_if\user_logic_adapter.v".
+    Summary:
+	no macro.
+Unit <user_logic_adapter> synthesized.
+
+Synthesizing Unit <user_logic>.
+    Related source file is "F:\RESEARCH\2.my_git\prime\hw\ml605\src\user_logic\slicer\user_logic.v".
+WARNING:Xst:647 - Input <i_user_data<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_user_addr<19:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str2_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str3_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str4_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str1_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str2_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str3_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_pcie_str4_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <i_intr_ack> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <o_pcie_str2_data<63:8>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <o_pcie_str3_data<63:8>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <o_pcie_str4_data<63:8>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <o_pcie_str2_data_valid>.
+    Found 1-bit register for signal <o_pcie_str3_data_valid>.
+    Found 1-bit register for signal <o_pcie_str4_data_valid>.
+    Found 64-bit register for signal <o_pcie_str1_data>.
+    Found 1-bit register for signal <o_user_rd_ack>.
+    Found 8-bit register for signal <lower>.
+    Found 8-bit register for signal <upper>.
+    Found 1-bit register for signal <user_wr_req_p>.
+    Found 8-bit register for signal <user_data_p>.
+    Found 8-bit register for signal <user_addr_p>.
+    Found 1-bit register for signal <o_pcie_str1_data_valid>.
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[7]_LessThan_2_o> created at line 75
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[7]_upper[7]_LessThan_3_o> created at line 75
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[15]_LessThan_4_o> created at line 79
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[15]_upper[7]_LessThan_5_o> created at line 79
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[23]_LessThan_6_o> created at line 83
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[23]_upper[7]_LessThan_7_o> created at line 83
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[31]_LessThan_8_o> created at line 87
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[31]_upper[7]_LessThan_9_o> created at line 87
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[39]_LessThan_10_o> created at line 91
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[39]_upper[7]_LessThan_11_o> created at line 91
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[47]_LessThan_12_o> created at line 95
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[47]_upper[7]_LessThan_13_o> created at line 95
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[55]_LessThan_14_o> created at line 99
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[55]_upper[7]_LessThan_15_o> created at line 99
+    Found 8-bit comparator greater for signal <lower[7]_i_pcie_str1_data[63]_LessThan_16_o> created at line 103
+    Found 8-bit comparator greater for signal <i_pcie_str1_data[63]_upper[7]_LessThan_17_o> created at line 103
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<7><0:0>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<6><7:7>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<5><6:6>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<4><5:5>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<3><4:4>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<2><3:3>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<1><2:2>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str2_data<0><1:1>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<7><0:0>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<6><7:7>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<5><6:6>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<4><5:5>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<3><4:4>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<2><3:3>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<1><2:2>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str3_data<0><1:1>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<7><0:0>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<6><7:7>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<5><6:6>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<4><5:5>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<3><4:4>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<2><3:3>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<1><2:2>> (without init value) have a constant value of 0 in block <user_logic>.
+    WARNING:Xst:2404 -  FFs/Latches <o_pcie_str4_data<0><1:1>> (without init value) have a constant value of 0 in block <user_logic>.
+    Summary:
+	inferred 102 D-type flip-flop(s).
+	inferred  16 Comparator(s).
+	inferred  64 Multiplexer(s).
+Unit <user_logic> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 11
+ 1-bit register                                        : 6
+ 64-bit register                                       : 1
+ 8-bit register                                        : 4
+# Comparators                                          : 16
+ 8-bit comparator greater                              : 16
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 64
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <user_adpt_fifo.ngc>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_wr_fifo_1>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_wr_fifo_2>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_wr_fifo_3>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_wr_fifo_4>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_rd_fifo_1>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_rd_fifo_2>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_rd_fifo_3>.
+Loading core <user_adpt_fifo> for timing and area information for instance <adpt_rd_fifo_4>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 102
+ Flip-Flops                                            : 102
+# Comparators                                          : 16
+ 8-bit comparator greater                              : 16
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 64
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <user_logic_top> ...
+
+Optimizing unit <user_logic_adapter> ...
+
+Optimizing unit <user_logic> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block user_logic_top, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_rd_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_4> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_3> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <ula/adpt_wr_fifo_1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 102
+ Flip-Flops                                            : 102
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : user_logic_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 838
+#      GND                         : 17
+#      INV                         : 41
+#      LUT2                        : 104
+#      LUT3                        : 40
+#      LUT4                        : 233
+#      LUT5                        : 64
+#      LUT6                        : 162
+#      MUXCY                       : 160
+#      VCC                         : 17
+# FlipFlops/Latches                : 1046
+#      FD                          : 118
+#      FDC                         : 24
+#      FDCE                        : 264
+#      FDE                         : 512
+#      FDP                         : 104
+#      FDPE                        : 8
+#      FDRE                        : 13
+#      FDSE                        : 3
+# RAMS                             : 8
+#      RAMB36E1                    : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6vlx240tff1156-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1046  out of  301440     0%  
+ Number of Slice LUTs:                  644  out of  150720     0%  
+    Number used as Logic:               644  out of  150720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1442
+   Number with an unused Flip Flop:     396  out of   1442    27%  
+   Number with an unused LUT:           798  out of   1442    55%  
+   Number of fully used LUT-FF pairs:   248  out of   1442    17%  
+   Number of unique control sets:        75
+
+IO Utilization: 
+ Number of IOs:                         619
+ Number of bonded IOBs:                   0  out of    600     0%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                8  out of    416     1%  
+    Number using Block RAM only:          8
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+i_user_clk                         | NONE(ul/upper_7)       | 1054  |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                                                                                                                                                                                                                                                                    | Buffer(FF name)                                                                                                                                                                                                         | Load  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)| 2     |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.939ns (Maximum Frequency: 340.252MHz)
+   Minimum input arrival time before clock: 1.232ns
+   Maximum output required time after clock: 0.860ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'i_user_clk'
+  Clock period: 2.939ns (frequency: 340.252MHz)
+  Total number of paths / destination ports: 9464 / 1924
+-------------------------------------------------------------------------
+Delay:               2.939ns (Levels of Logic = 5)
+  Source:            ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/dout_i_60 (FF)
+  Destination:       ul/o_pcie_str1_data_61 (FF)
+  Source Clock:      i_user_clk rising
+  Destination Clock: i_user_clk rising
+
+  Data Path: ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/dout_i_60 to ul/o_pcie_str1_data_61
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.375   0.665  U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/dout_i_60 (m_axis_tdata<60>)
+     end scope: 'ula/adpt_wr_fifo_1:m_axis_tdata<60>'
+     LUT4:I0->O            1   0.068   0.581  ul/i_pcie_str1_data[63]_upper[7]_LessThan_17_o1_SW1 (N34)
+     LUT5:I2->O            4   0.068   0.511  ul/i_pcie_str1_data[63]_upper[7]_LessThan_17_o1 (ul/i_pcie_str1_data[63]_upper[7]_LessThan_17_o2)
+     LUT6:I4->O            6   0.068   0.524  ul/lower[7]_i_pcie_str1_data[63]_AND_8_o1 (ul/lower[7]_i_pcie_str1_data[63]_AND_8_o1)
+     LUT6:I4->O            1   0.068   0.000  ul/Mmux_GND_4_o_i_pcie_str1_data[56]_MUX_72_o11 (ul/GND_4_o_i_pcie_str1_data[56]_MUX_72_o)
+     FD:D                      0.011          ul/o_pcie_str1_data_56
+    ----------------------------------------
+    Total                      2.939ns (0.658ns logic, 2.281ns route)
+                                       (22.4% logic, 77.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'i_user_clk'
+  Total number of paths / destination ports: 810 / 810
+-------------------------------------------------------------------------
+Offset:              1.232ns (Levels of Logic = 2)
+  Source:            i_pcie_str4_ack (PAD)
+  Destination:       ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Destination Clock: i_user_clk rising
+
+  Data Path: i_pcie_str4_ack to ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'ula/adpt_rd_fifo_4:m_axis_tready'
+     LUT4:I0->O           20   0.068   0.524  U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/Mmux_RAM_RD_EN_FWFT11 (U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en)
+     begin scope: 'ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:ENB'
+     RAMB36E1:ENARDEN          0.401          ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    ----------------------------------------
+    Total                      1.232ns (0.708ns logic, 0.524ns route)
+                                       (57.5% logic, 42.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i_user_clk'
+  Total number of paths / destination ports: 265 / 265
+-------------------------------------------------------------------------
+Offset:              0.860ns (Levels of Logic = 2)
+  Source:            ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i (FF)
+  Destination:       o_pcie_str1_ack (PAD)
+  Source Clock:      i_user_clk rising
+
+  Data Path: ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i to o_pcie_str1_ack
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              1   0.375   0.399  U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i (U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i)
+     INV:I->O              0   0.086   0.000  U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_tready1_INV_0 (s_axis_tready)
+     end scope: 'ula/adpt_wr_fifo_1:s_axis_tready'
+    ----------------------------------------
+    Total                      0.860ns (0.461ns logic, 0.399ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock i_user_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+i_user_clk     |    2.939|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.23 secs
+ 
+--> 
+
+Total memory usage is 282684 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   38 (   0 filtered)
+Number of infos    :   49 (   0 filtered)
+
