@@ -21,5 +21,18 @@ sudo make setup
 make
 sudo make install
 
-Implementing hardware
----------------------
+Hardware Implementation
+-----------------------
+
+The custom accelerator (or any hardware) implemented by the user will be implemented as a reconfigurable module.
+This custom hardware will be called *user logic* for easer reference.
+The FPGA is pre-partitioned to enable implementing user logic in a reconfigurable region (PRR).
+This enables swapping in and out different user logic at system run-time using partial reconfiguration (PR).
+The user logic may have a single AXI-Lite interface and up to 4 AXI4-Stream interfaces.
+The port naming for it should follow the naming conventions given in the wrapper module located at hw\ml605\src\user_logic_if\user_logic_bb.v.
+Users can integrate user logic with the DyRACT hardware platform by following Xilinx PlanAhead PR implementation flow or by simply running the scripts provided in the hw\"board"\script directory.
+While using the scripts, the netlist corresponding the user logic should be in the (user_logic.ngc) script directory.
+Presently an example netlist is provided in the directory.
+It should be replaced by the specific netlist required by the user.
+The netlist can be generated using Xilinx XST based on the user logic HDL written in Verilog or VHDL.
+If XST is used, the IO buffers should be disabled when generating the netlist.
