@@ -18,8 +18,8 @@ To install the driver, go to the sw/driver directory and use the make file.
 Use the following commands for installation.
 
 `sudo make setup` 
-`make`  
-`sudo make install`  
+`make` 
+`sudo make install` 
 
 Hardware Implementation
 -----------------------
@@ -46,11 +46,11 @@ Users need to write the high-level software application to interact with the FPG
 To help users, a library of API functions is provided in the sw/userlib directory.
 These functions include
 
-`fpga_send_data()` :  To send streaming data to user logic` 
+`fpga_send_data()` :  To send streaming data to user logic  
 `fpga_recv_data()` :  To receive streaming data from user logic 
 `fpga_reconfig()`  :  To reconfigure the fpga 
-`fpga_reg_wr()`    :  To write data to registers in DyRACT HW/user logic
-`fpga_reg_rd()`    :  To read data from registers in DyRACT HW/user logic
-`user_set_clk()`   :  To modify clock frequency to user logic
+`fpga_reg_wr()`    :  To write data to registers in DyRACT HW/user logic 
+`fpga_reg_rd()`    :  To read data from registers in DyRACT HW/user logic 
+`user_set_clk()`   :  To modify clock frequency to user logic 
 
 The register map for the user logic should start from 0x400 or above since the lower address space is used by the DyRACT hardware.
