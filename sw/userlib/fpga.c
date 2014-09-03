@@ -204,7 +204,7 @@ void fpga_write_word(unsigned char * mptr, unsigned int val) {
 
 
 /*The main function used to send PCIe data to the SWITCH DDR interface and the PCIe user stream interfaces
-    inputs :  destination type (ddr, user1, user2 etc)
+    inputs :destination type (USERPCIE1, USERPCIE2 ...)
             data buffer holdin the send data
             total length of the transfer
             target address in case of data transfer to DDR and blocking-non blocking indication in case of user data transfer

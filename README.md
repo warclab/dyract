@@ -36,3 +36,21 @@ Presently an example netlist is provided in the directory.
 It should be replaced by the specific netlist required by the user.
 The netlist can be generated using Xilinx XST based on the user logic HDL written in Verilog or VHDL.
 If XST is used, the IO buffers should be disabled when generating the netlist.
+
+Communicating with the FPGA
+---------------------------
+Once the required hardware is generated, the FPGA needs to be programmed using a *full bitstream*.
+Users can also choose to program the on-board non-volatile memory for storing this first bitstream.
+All the further reconfiguration will be through PCIe interface.
+Users need to write the high-level software application to interact with the FPGA.
+To help users, a library of API functions is provided in the sw/userlib directory.
+These functions include
+
+fpga_send_data() :  To send streaming data to user logic 
+fpga_recv_data() :  To receive streaming data from user logic 
+fpga_reconfig()  :  To reconfigure the fpga 
+fpga_reg_wr()    :  To write data to registers in DyRACT HW/user logic
+fpga_reg_rd()    :  To read data from registers in DyRACT HW/user logic
+user_set_clk()   :  To modify clock frequency to user logic
+
+The register map for the user logic should start from 0x400 or above since the lower address space is used by the DyRACT hardware.
