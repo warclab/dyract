@@ -17,9 +17,11 @@ The present driver is supported on Linux kernel version 2.6.
 To install the driver, go to the sw/driver directory and use the make file.
 Use the following commands for installation.
 
-`sudo make setup` 
-`make` 
-`sudo make install` 
+```
+sudo make setup 
+make 
+sudo make install 
+```
 
 Hardware Implementation
 -----------------------
