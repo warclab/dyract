@@ -17,9 +17,9 @@ The present driver is supported on Linux kernel version 2.6.
 To install the driver, go to the sw/driver directory and use the make file.
 Use the following commands for installation.
 
-sudo make setup  
-make  
-sudo make install  
+`sudo make setup` 
+`make`  
+`sudo make install`  
 
 Hardware Implementation
 -----------------------
@@ -29,8 +29,8 @@ This custom hardware will be called *user logic* for easer reference.
 The FPGA is pre-partitioned to enable implementing user logic in a reconfigurable region (PRR).
 This enables swapping in and out different user logic at system run-time using partial reconfiguration (PR).
 The user logic may have a single AXI-Lite interface and up to 4 AXI4-Stream interfaces.
-The port naming for it should follow the naming conventions given in the wrapper module located at hw\ml605\src\user_logic_if\user_logic_bb.v.
-Users can integrate user logic with the DyRACT hardware platform by following Xilinx PlanAhead PR implementation flow or by simply running the scripts provided in the hw\"board"\script directory.
+The port naming for it should follow the naming conventions given in the wrapper module located at hw/ml605/src/user_logic_if/user_logic_bb.v.
+Users can integrate user logic with the DyRACT hardware platform by following Xilinx PlanAhead PR implementation flow or by simply running the scripts provided in the hw/{board}/script directory.
 While using the scripts, the netlist corresponding the user logic should be in the (user_logic.ngc) script directory.
 Presently an example netlist is provided in the directory.
 It should be replaced by the specific netlist required by the user.
@@ -46,11 +46,11 @@ Users need to write the high-level software application to interact with the FPG
 To help users, a library of API functions is provided in the sw/userlib directory.
 These functions include
 
-fpga_send_data() :  To send streaming data to user logic 
-fpga_recv_data() :  To receive streaming data from user logic 
-fpga_reconfig()  :  To reconfigure the fpga 
-fpga_reg_wr()    :  To write data to registers in DyRACT HW/user logic
-fpga_reg_rd()    :  To read data from registers in DyRACT HW/user logic
-user_set_clk()   :  To modify clock frequency to user logic
+`fpga_send_data()` :  To send streaming data to user logic` 
+`fpga_recv_data()` :  To receive streaming data from user logic 
+`fpga_reconfig()`  :  To reconfigure the fpga 
+`fpga_reg_wr()`    :  To write data to registers in DyRACT HW/user logic
+`fpga_reg_rd()`    :  To read data from registers in DyRACT HW/user logic
+`user_set_clk()`   :  To modify clock frequency to user logic
 
 The register map for the user logic should start from 0x400 or above since the lower address space is used by the DyRACT hardware.
