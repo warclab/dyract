@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Oct 07 16:22:48 2014
+# Process ID: 16596
+# Log file: D:/SHS/dyract/dyract/hw/ac701/planahead/project_pr/planAhead.log
+# Journal file: D:/SHS/dyract/dyract/hw/ac701/planahead/project_pr\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\SHS\dyract\dyract\hw\ac701\planahead\project_pr\project_pr.ppr}
