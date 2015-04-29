@@ -145,6 +145,8 @@ int fpga_recv_local_data(DMA_PNT dest, unsigned char * recvdata, int recvlen);
 
 int user_set_clk(unsigned int freq);
 
+int fpga_reconfig(char *bin_file);
+
 #ifdef __cplusplus
 }
 #endif

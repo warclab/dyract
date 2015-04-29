@@ -592,6 +592,38 @@ int fpga_recv_data(DMA_PNT dest, unsigned char * recvdata, int recvlen, unsigned
     return 0;                
 }
 
+int fpga_reconfig(char *bin_file){
+    FILE *file;
+    unsigned long fileLen;
+    char *buffer;
+    int rtn;
+    file = fopen(bin_file, "rb");
+    if (!file)
+    {
+	fprintf(stderr, "Unable to open partial bit file\n");
+	return -1;
+    }
+    //Get file length
+    fseek(file, 0, SEEK_END);
+    fileLen=ftell(file);
+    fseek(file, 0, SEEK_SET);
+    //Allocate memory
+    buffer=(char *)malloc(fileLen+1);
+    if (!buffer)
+    {
+	    fprintf(stderr, "Memory error!\n");
+        fclose(file);
+	    return -1;
+    }
+    //Read file contents into buffer
+    fread(buffer, 1, fileLen, file);
+    fclose(file);
+    //Send partial bitstream to FPGA
+    rtn = fpga_send_data(ICAP, (unsigned char *) buffer, fileLen, 0); 
+    free(buffer);
+    return rtn;
+}
+
 
 int fpga_recv_local_data(DMA_PNT dest, unsigned char * recvdata, int recvlen) {
 	int rtn;
