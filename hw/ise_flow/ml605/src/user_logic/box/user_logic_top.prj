@@ -1,0 +1,8 @@
+verilog work "x_filter.v"
+verilog work "output_fifo.v"
+verilog work "line_buffer.v"
+verilog work "box_top.v"
+verilog work "../../ipcore_dir/user_adpt_fifo.v"
+verilog work "../../user_logic_if/user_logic_adapter.v"
+verilog work "user_logic.v"
+verilog work "../../user_logic_if/user_logic_top.v"

@@ -1,0 +1,56 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -p xc7a200tfbg676-2 -dd _ngo -uc prime.ucf prime.edf
+
+Executing edif2ngd -quiet "prime.edf" "_ngo\prime.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading NGO file
+"D:/SHS/Research/fpldemo/ac701/project_2/project_2.runs/prime/_ngo/prime.ngo"
+...
+WARNING:NgdBuild:1023 - Could not resolve reconfigurable Partition block 'ult'. 
+   This may be legal if you are implementing the Partition as a blackbox.   If
+   it is not a blackbox, you should check that the Partition's module file,
+   'user_logic_top.ngc'  or 'user_logic_top.edf' (or another valid EDIF
+   extension), exists and is properly set up in a search path (see the -sd
+   option).
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "prime.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  Preserved Partitions:
+
+
+  Implemented Partitions:
+
+    Partition "/top":
+Attribute STATE set to IMPLEMENT.
+
+    Partition "/top/ult" (Reconfigurable Module "blank"):
+Attribute STATE set to IMPLEMENT.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 309968 kilobytes
+
+Writing NGD file "prime.ngd" ...
+Total REAL time to NGDBUILD completion:  51 sec
+Total CPU time to NGDBUILD completion:   28 sec
+
+Writing NGDBUILD log file "prime.bld"...

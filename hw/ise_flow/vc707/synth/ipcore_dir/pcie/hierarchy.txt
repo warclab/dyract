@@ -1,0 +1,78 @@
+ xilinx_pcie_2_1_ep_7x
+ |
+ |--pcie_pipe_clock (When External Clocking enabled)
+ |--pcie (Core Top Level, in source directory)
+ |  |
+ |  |--pcie_pcie_top
+ |  |  |
+ |  |  |--pcie_axi_basic_top
+ |  |  |  |
+ |  |  |  |--pcie_axi_basic_rx
+ |  |  |  |  |
+ |  |  |  |  |--pcie_axi_basic_rx_pipeline
+ |  |  |  |  |--pcie_axi_basic_rx_null_gen
+ |  |  |  |
+ |  |  |  |--pcie_axi_basic_tx
+ |  |  |     |
+ |  |  |     |--pcie_axi_basic_tx_pipeline
+ |  |  |     |--pcie_axi_basic_tx_thrtl_ctl
+ |  |  |
+ |  |  |--pcie_pcie_7x
+ |  |  |  |
+ |  |  |  |--pcie_pcie_bram_top_7x
+ |  |  |  |  |
+ |  |  |  |  |--pcie_pcie_brams_7x (an instance each for Rx & Tx)
+ |  |  |  |     |
+ |  |  |  |     |--pcie_pcie_bram_7x
+ |  |  |  |
+ |  |  |  |--PCIE_2_1 (Integrated Block Instance)
+ |  |  |
+ |  |  |--pcie_pcie_pipe_pipeline
+ |  |     |
+ |  |     |--pcie_pcie_pipe_misc
+ |  |     |--pcie_pcie_pipe_lane (per lane)
+ |  |
+ |  |--pcie_gt_top
+ |     |
+ |     |--pcie_pipe_wrapper
+ |        |
+ |        |--pcie_pipe_clock
+ |        |--pcie_pipe_reset
+ |        |--pcie_qpll_reset
+ |        |--pcie_pipe_user
+ |        |--pcie_pipe_rate
+ |        |--pcie_pipe_sync
+ |        |--pcie_pipe_drp
+ |        |--pcie_pipe_eq
+ |        |  |
+ |        |  |--pcie_rxeq_scan
+ |        |
+ |        |--pcie_qpll_drp
+ |        |--pcie_qpll_wrapper
+ |        |--pcie_gt_wrapper
+ |        |  |
+ |        |  |-- GTXE2_CHANNEL
+ |        |
+ |        |--pcie_qpll_drp.v
+ |        |--pcie_qpll_wrapper.v
+ |           |
+ |           |-- GTXE2_COMMON
+ |
+ |--pcie_app_7x (PIO design, in example_design directory)
+    |
+    |--PIO
+       |
+       |--PIO_EP
+       |  |
+       |  |--PIO_EP_MEM_ACCESS
+       |  |  |
+       |  |  |--EP_MEM
+       |  |     |
+       |  |     |--RAMB36
+       |  |
+       |  |--PIO_RX_ENGINE
+       |  |--PIO_TX_ENGINE
+       |
+       |--PIO_TO_CTRL
+
+

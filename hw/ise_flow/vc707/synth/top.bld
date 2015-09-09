@@ -1,0 +1,100 @@
+Release 14.7 ngdbuild P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+ise -dd _ngo -sd ../src/ipcore_dir -nt timestamp -uc
+E:/mygit/dyract/hw/vc707/src/v7_top.ucf -p xc7vx485t-ffg1761-2 top.ngc top.ngd
+
+Reading NGO file "E:/mygit/dyract/hw/vc707/synth/top.ngc" ...
+Loading design module "../src/ipcore_dir/pcie_7x_v1_8.ngc"...
+Loading design module "../src/ipcore_dir/user_strm_fifo.ngc"...
+Loading design module "../src/ipcore_dir/user_fifo.ngc"...
+Loading design module "../src/ipcore_dir/config_buffer.ngc"...
+Loading design module "E:\mygit\dyract\hw\vc707\synth/user_logic.ngc"...
+Loading design module "../src/ipcore_dir/user_adpt_fifo.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"E:/mygit/dyract/hw/vc707/src/v7_top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin TXOUTCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin QPLLOUTREFCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_wrapper_i/gtx
+   _common.gtxe2_common_i because the signal path to this output pin depends
+   upon block attribute settings. Constraint distribution does not support
+   attribute dependent distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin RXOUTCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin RXOUTCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin RXOUTCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [E:/mygit/dyract/hw/vc707/src/v7_top.ucf(158)] was not distributed to the
+   output pin RXOUTCLK of block
+   gt_top_i/pipe_wrapper_i/pipe_lane[3].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+INFO:ConstraintSystem:178 - TNM 'CLK_USERCLK2', used in period specification
+   'TS_CLK_USERCLK2', was traced into MMCME2_ADV instance app/ucg/mmcm_inst. The
+   following new TNM groups and period specifications were generated at the
+   MMCME2_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_pcie_app_ucg_clk0_bufgin = PERIOD
+   "pcie_app_ucg_clk0_bufgin" TS_CLK_USERCLK2 HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:486 - Attribute "CLOCK_HOLD" is not allowed on symbol
+   "app/ucg/mmcm_inst" of type "MMCME2_ADV".  This attribute will be ignored.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   7
+
+Total memory usage is 206764 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  34 sec
+Total CPU time to NGDBUILD completion:   34 sec
+
+Writing NGDBUILD log file "top.bld"...

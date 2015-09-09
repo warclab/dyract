@@ -1,0 +1,4 @@
+verilog work "../../ipcore_dir/user_adpt_fifo.v"
+verilog work "../../user_logic_if/user_logic_adapter.v"
+verilog work "user_logic.v"
+verilog work "../../user_logic_if/user_logic_top.v"

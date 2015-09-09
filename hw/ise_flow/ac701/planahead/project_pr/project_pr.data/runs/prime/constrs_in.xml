@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../project_2/project_2.srcs/constrs_1/imports/new/a7_top.ucf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../project_pr/project_pr.srcs/constrs_1/new/a7_top.ucf"/>
+        <Attr Name="ImportTime" Val="1407160631"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../project_2/project_2.data/constrs_1/designprops.xml">
+      <FileInfo SFType="CompatPartsDb"/>
+    </File>
+    <File Path="$PPRDIR/../../project_2/project_2.data/constrs_1/usercols.xml">
+      <FileInfo SFType="UserColsDb"/>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../project_2/project_2.srcs/constrs_1/imports/new/a7_top.ucf"/>
+      <Option Name="ConstrsType" Val="UCF"/>
+    </Config>
+  </FileSet>
+</DARoots>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="ult#emboss" Type="Reconfig" RelSrcDir="$PSRCDIR/ult#emboss">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../project_2/project_2.srcs/ult#emboss/imports/emboss/user_logic_top.ngc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ise/user_logic/emboss/user_logic_top.ngc"/>
+        <Attr Name="ImportTime" Val="1409394455"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../project_2/project_2.srcs/ult#emboss/imports/emboss/ipcore_dir/user_adpt_fifo.ngc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ise/user_logic/emboss/ipcore_dir/user_adpt_fifo.ngc"/>
+        <Attr Name="ImportTime" Val="1406898283"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../project_2/project_2.srcs/ult#emboss/imports/emboss/ipcore_dir/output_fifo.ngc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ise/user_logic/emboss/ipcore_dir/output_fifo.ngc"/>
+        <Attr Name="ImportTime" Val="1394569436"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../project_2/project_2.srcs/ult#emboss/imports/emboss/ipcore_dir/line_buffer.ngc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../ise/user_logic/emboss/ipcore_dir/line_buffer.ngc"/>
+        <Attr Name="ImportTime" Val="1394569418"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+</DARoots>

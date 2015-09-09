@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.xst" -ofn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.syr" 
+xst -intstyle ise -ifn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.xst" -ofn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.syr" 
+xst -intstyle ise -ifn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.xst" -ofn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.syr" 
+xst -intstyle ise -ifn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.xst" -ofn "F:/RESEARCH/2.my_git/prime/hw/ml605/src/user_logic/box/user_logic_top.syr" 

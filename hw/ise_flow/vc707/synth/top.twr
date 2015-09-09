@@ -1,0 +1,2325 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc7vx485t,ffg1761,C,-2 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_SYSCLK = PERIOD TIMEGRP "SYSCLK" 100 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   1.538ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_SYSCLK = PERIOD TIMEGRP "SYSCLK" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.462ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.538ns (650.195MHz) (Tgtxper_GTREFCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Location pin: GTXE2_CHANNEL_X1Y11.GTREFCLK1
+  Clock network: pcie/sys_clk
+--------------------------------------------------------------------------------
+Slack: 8.462ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.538ns (650.195MHz) (Tgtxper_GTREFCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Location pin: GTXE2_CHANNEL_X1Y9.GTREFCLK1
+  Clock network: pcie/sys_clk
+--------------------------------------------------------------------------------
+Slack: 8.462ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.538ns (650.195MHz) (Tgtxper_GTREFCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i/GTREFCLK0
+  Location pin: GTXE2_CHANNEL_X1Y10.GTREFCLK1
+  Clock network: pcie/sys_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_250 = PERIOD TIMEGRP "CLK_250" TS_SYSCLK * 2.5 HIGH 
+50% PRIORITY 1;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 2871 paths analyzed, 1784 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   4.000ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (PCIE_X1Y0.PIPERX3DATA15), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.625ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_data_q_15 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Requirement:          4.000ns
+  Data Path Delay:      2.884ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.300ns (1.247 - 1.547)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_data_q_15 to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X216Y99.DQ        Tcko                  0.259   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_data_q<15>
+                                                          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_data_q_15
+    PCIE_X1Y0.PIPERX3DATA15 net (fanout=1)        2.663   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_data_q<15>
+    PCIE_X1Y0.PIPECLK       Tpcicck_MGT3         -0.038   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    ----------------------------------------------------  ---------------------------
+    Total                                         2.884ns (0.221ns logic, 2.663ns route)
+                                                          (7.7% logic, 92.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cplllock_reg2_0 (SLICE_X221Y135.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.732ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cplllock_reg2_0 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      2.778ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.299ns (1.245 - 1.544)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cplllock_reg2_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X211Y92.AQ     Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+    SLICE_X215Y133.A6    net (fanout=12)       1.398   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+    SLICE_X215Y133.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_user_i/txcompliance_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/QRST_RST_N_inv1_INV_0
+    SLICE_X221Y135.SR    net (fanout=24)       0.810   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/RST_RST_N_inv
+    SLICE_X221Y135.CLK   Tsrck                 0.304   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cplllock_reg2_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.778ns (0.570ns logic, 2.208ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset (SLICE_X221Y135.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.732ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      2.778ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.299ns (1.245 - 1.544)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X211Y92.AQ     Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+    SLICE_X215Y133.A6    net (fanout=12)       1.398   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/reset_n_reg2
+    SLICE_X215Y133.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_user_i/txcompliance_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/QRST_RST_N_inv1_INV_0
+    SLICE_X221Y135.SR    net (fanout=24)       0.810   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/RST_RST_N_inv
+    SLICE_X221Y135.CLK   Tsrck                 0.304   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/cpllreset
+    -------------------------------------------------  ---------------------------
+    Total                                      2.778ns (0.570ns logic, 2.208ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_250 = PERIOD TIMEGRP "CLK_250" TS_SYSCLK * 2.5 HIGH 50% PRIORITY 1;
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (PCIE_X1Y0.PIPERX3STATUS2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.004ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_status_q_2 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Requirement:          0.000ns
+  Data Path Delay:      0.037ns (Levels of Logic = 0)
+  Clock Path Skew:      0.033ns (0.488 - 0.455)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_status_q_2 to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X215Y101.CQ        Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/gt_rx_valid_filter[3].GT_RX_VALID_FILTER_7x_inst/reg_state_eios_det_FSM_FFd5
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_status_q_2
+    PCIE_X1Y0.PIPERX3STATUS2 net (fanout=1)        0.434   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_3_i/pipe_rx_status_q<2>
+    PCIE_X1Y0.PIPECLK        Tpcickc_MGT3(-Th)     0.497   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.037ns (-0.397ns logic, 0.434ns route)
+                                                           (-1073.0% logic, 1173.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (PCIE_X1Y0.PIPERX2ELECIDLE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.011ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_elec_idle_q (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Requirement:          0.000ns
+  Data Path Delay:      0.051ns (Levels of Logic = 0)
+  Clock Path Skew:      0.040ns (0.488 - 0.448)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_elec_idle_q to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X214Y117.DMUX       Tshcko                0.127   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q<3>
+                                                            pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_elec_idle_q
+    PCIE_X1Y0.PIPERX2ELECIDLE net (fanout=1)        0.426   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_elec_idle_q
+    PCIE_X1Y0.PIPECLK         Tpcickc_MGT2(-Th)     0.502   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                            pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.051ns (-0.375ns logic, 0.426ns route)
+                                                            (-735.3% logic, 835.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (PCIE_X1Y0.PIPERX2DATA3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.012ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q_3 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Requirement:          0.000ns
+  Data Path Delay:      0.052ns (Levels of Logic = 0)
+  Clock Path Skew:      0.040ns (0.488 - 0.448)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q_3 to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X214Y117.DQ      Tcko                  0.100   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q<3>
+                                                         pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q_3
+    PCIE_X1Y0.PIPERX2DATA3 net (fanout=1)        0.425   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_pipe_pipeline_i/pipe_4_lane.pipe_lane_2_i/pipe_rx_data_q<3>
+    PCIE_X1Y0.PIPECLK      Tpcickc_MGT2(-Th)     0.473   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                         pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    ---------------------------------------------------  ---------------------------
+    Total                                        0.052ns (-0.373ns logic, 0.425ns route)
+                                                         (-717.3% logic, 817.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_250 = PERIOD TIMEGRP "CLK_250" TS_SYSCLK * 2.5 HIGH 50% PRIORITY 1;
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 4.000ns (250.000MHz) (Tpciper_PIPECLK(Fpipeclk))
+  Physical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/PIPECLK
+  Logical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/PIPECLK
+  Location pin: PCIE_X1Y0.PIPECLK
+  Clock network: pcie/PIPE_OOBCLK_IN
+--------------------------------------------------------------------------------
+Slack: 0.970ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 3.030ns (330.033MHz) (Tgtxper_RXUSRCLK(Trx))
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/RXUSRCLK
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/RXUSRCLK
+  Location pin: GTXE2_CHANNEL_X1Y11.RXUSRCLK
+  Clock network: pcie/PIPE_OOBCLK_IN
+--------------------------------------------------------------------------------
+Slack: 0.970ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 3.030ns (330.033MHz) (Tgtxper_RXUSRCLK2(Trx2))
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/RXUSRCLK2
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/RXUSRCLK2
+  Location pin: GTXE2_CHANNEL_X1Y11.RXUSRCLK2
+  Clock network: pcie/PIPE_OOBCLK_IN
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_125 = PERIOD TIMEGRP "CLK_125" TS_SYSCLK * 1.25 HIGH 
+50% PRIORITY 2;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1461 paths analyzed, 1342 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.714ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i/start_reg1 (SLICE_X215Y132.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.186ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/fsm_FSM_FFd5 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i/start_reg1 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      1.478ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.265ns (3.282 - 3.547)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.071ns
+
+  Clock Uncertainty:          0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/fsm_FSM_FFd5 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i/start_reg1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X221Y132.BQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/fsm_FSM_FFd6
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/fsm_FSM_FFd5
+    SLICE_X215Y132.AX    net (fanout=4)        1.233   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/fsm_FSM_FFd5
+    SLICE_X215Y132.CLK   Tdick                 0.022   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i/start_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i/start_reg1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.478ns (0.245ns logic, 1.233ns route)
+                                                       (16.6% logic, 83.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_0 (SLICE_X219Y147.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.915ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      4.719ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.295ns (1.250 - 1.545)
+  Source Clock:         pcie/PIPE_DCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.071ns
+
+  Clock Uncertainty:          0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X213Y98.DQ     Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+    SLICE_X219Y147.SR    net (fanout=86)       4.192   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+    SLICE_X219Y147.CLK   Tsrck                 0.304   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1<3>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.719ns (0.527ns logic, 4.192ns route)
+                                                       (11.2% logic, 88.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_1 (SLICE_X219Y147.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.915ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_1 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      4.719ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.295ns (1.250 - 1.545)
+  Source Clock:         pcie/PIPE_DCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.071ns
+
+  Clock Uncertainty:          0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X213Y98.DQ     Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+    SLICE_X219Y147.SR    net (fanout=86)       4.192   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2
+    SLICE_X219Y147.CLK   Tsrck                 0.304   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1<3>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_drp_i/do_reg1_1
+    -------------------------------------------------  ---------------------------
+    Total                                      4.719ns (0.527ns logic, 4.192ns route)
+                                                       (11.2% logic, 88.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_125 = PERIOD TIMEGRP "CLK_125" TS_SYSCLK * 1.25 HIGH 50% PRIORITY 2;
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4 (SLICE_X212Y139.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.091ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd5 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.102ns (Levels of Logic = 1)
+  Clock Path Skew:      0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/PIPE_DCLK_IN rising at 8.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd5 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X213Y139.BQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd5
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd5
+    SLICE_X212Y139.D6    net (fanout=3)        0.061   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd5
+    SLICE_X212Y139.CLK   Tah         (-Th)     0.059   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4-In1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_drp_i/fsm_FSM_FFd4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.102ns (0.041ns logic, 0.061ns route)
+                                                       (40.2% logic, 59.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_8 (SLICE_X220Y100.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.111ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_8 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.122ns (Levels of Logic = 1)
+  Clock Path Skew:      0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/PIPE_DCLK_IN rising at 8.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_8 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X221Y100.AQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2<11>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_8
+    SLICE_X220Y100.A5    net (fanout=1)        0.081   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2<8>
+    SLICE_X220Y100.CLK   Tah         (-Th)     0.059   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg<11>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/Mmux_index[3]_GND_28_o_wide_mux_79_OUT171
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.122ns (0.041ns logic, 0.081ns route)
+                                                       (33.6% logic, 66.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_12 (SLICE_X220Y101.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.111ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_12 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.122ns (Levels of Logic = 1)
+  Clock Path Skew:      0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/PIPE_DCLK_IN rising at 8.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_12 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X221Y101.AQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2<15>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2_12
+    SLICE_X220Y101.A5    net (fanout=1)        0.081   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/do_reg2<12>
+    SLICE_X220Y101.CLK   Tah         (-Th)     0.059   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg<15>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/Mmux_index[3]_GND_28_o_wide_mux_79_OUT41
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/di_reg_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.122ns (0.041ns logic, 0.081ns route)
+                                                       (33.6% logic, 66.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_125 = PERIOD TIMEGRP "CLK_125" TS_SYSCLK * 1.25 HIGH 50% PRIORITY 2;
+--------------------------------------------------------------------------------
+Slack: 2.286ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 5.714ns (175.009MHz) (Tgtxper_DRPCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Location pin: GTXE2_CHANNEL_X1Y11.DRPCLK
+  Clock network: pcie/PIPE_DCLK_IN
+--------------------------------------------------------------------------------
+Slack: 2.286ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 5.714ns (175.009MHz) (Tgtxper_DRPCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Location pin: GTXE2_CHANNEL_X1Y9.DRPCLK
+  Clock network: pcie/PIPE_DCLK_IN
+--------------------------------------------------------------------------------
+Slack: 2.286ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 5.714ns (175.009MHz) (Tgtxper_DRPCLK)
+  Physical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Logical resource: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i/DRPCLK
+  Location pin: GTXE2_CHANNEL_X1Y10.DRPCLK
+  Clock network: pcie/PIPE_DCLK_IN
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_USERCLK = PERIOD TIMEGRP "CLK_USERCLK" TS_SYSCLK * 
+2.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 725 paths analyzed, 450 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.460ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y24.DIADI23), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.540ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      3.360ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.035ns (0.824 - 0.859)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMRXWDATA23   Tpcicko_RXRAM         0.522   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y24.DIADI23    net (fanout=1)        2.295   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_rx_wdata<23>
+    RAMB36_X13Y24.CLKARDCLKU Trdck_DIA             0.543   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          3.360ns (1.065ns logic, 2.295ns route)
+                                                           (31.7% logic, 68.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y20.DIADI17), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.602ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      3.312ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.021ns (0.838 - 0.859)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMTXWDATA53   Tpcicko_TXRAM         0.513   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y20.DIADI17    net (fanout=1)        2.256   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_tx_wdata<53>
+    RAMB36_X13Y20.CLKARDCLKU Trdck_DIA             0.543   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          3.312ns (1.056ns logic, 2.256ns route)
+                                                           (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y20.DIADI7), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.641ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      3.273ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.021ns (0.838 - 0.859)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMTXWDATA43   Tpcicko_TXRAM         0.506   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y20.DIADI7     net (fanout=1)        2.224   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_tx_wdata<43>
+    RAMB36_X13Y20.CLKARDCLKU Trdck_DIA             0.543   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          3.273ns (1.049ns logic, 2.224ns route)
+                                                           (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_USERCLK = PERIOD TIMEGRP "CLK_USERCLK" TS_SYSCLK * 2.5 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y24.DIADI11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.000ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.064ns (Levels of Logic = 0)
+  Clock Path Skew:      0.064ns (0.872 - 0.808)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMRXWDATA11   Tpcicko_RXRAM         0.143   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y24.DIADI11    net (fanout=1)        0.448   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_rx_wdata<11>
+    RAMB36_X13Y24.CLKARDCLKU Trckd_DIA   (-Th)     0.527   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.064ns (-0.384ns logic, 0.448ns route)
+                                                           (-600.0% logic, 700.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y24.DIPADIP0), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.012ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.076ns (Levels of Logic = 0)
+  Clock Path Skew:      0.064ns (0.872 - 0.808)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMRXWDATA32   Tpcicko_RXRAM         0.139   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y24.DIPADIP0   net (fanout=1)        0.464   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_rx_wdata<32>
+    RAMB36_X13Y24.CLKARDCLKL Trckd_DIPA  (-Th)     0.527   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_rx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.076ns (-0.388ns logic, 0.464ns route)
+                                                           (-510.5% logic, 610.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAMB36_X13Y21.DIADI22), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.016ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i (CPU)
+  Destination:          pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.080ns (Levels of Logic = 0)
+  Clock Path Skew:      0.064ns (0.515 - 0.451)
+  Source Clock:         pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_USERCLK1_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i to pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    PCIE_X1Y0.MIMTXWDATA22   Tpcicko_TXRAM         0.023   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i
+    RAMB36_X13Y21.DIADI22    net (fanout=1)        0.353   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/mim_tx_wdata<22>
+    RAMB36_X13Y21.CLKARDCLKL Trckd_DIA   (-Th)     0.296   pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+                                                           pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[0].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.080ns (-0.273ns logic, 0.353ns route)
+                                                           (-341.3% logic, 441.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_USERCLK = PERIOD TIMEGRP "CLK_USERCLK" TS_SYSCLK * 2.5 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.000ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 2.000ns (500.000MHz) (Tpciper_USERCLK(Fuserclk))
+  Physical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK
+  Logical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK
+  Location pin: PCIE_X1Y0.USERCLK
+  Clock network: pcie/PIPE_USERCLK1_IN
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl/CLKARDCLKL
+  Logical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl/CLKARDCLKL
+  Location pin: RAMB36_X13Y20.CLKARDCLKL
+  Clock network: pcie/PIPE_USERCLK1_IN
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl/CLKARDCLKU
+  Logical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_bram_top/pcie_brams_tx/brams[1].ram/use_tdp.ramb36/bram36_tdp_bl.bram36_tdp_bl/CLKARDCLKU
+  Location pin: RAMB36_X13Y20.CLKARDCLKU
+  Clock network: pcie/PIPE_USERCLK1_IN
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_USERCLK2 = PERIOD TIMEGRP "CLK_USERCLK2" TS_SYSCLK * 
+2.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 132122 paths analyzed, 19315 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   4.000ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/reg_file/USER2_PC_DMA_LEN_8 (SLICE_X199Y146.CE), 12 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.138ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_6 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_8 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.457ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_6 to pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.CQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_6
+    SLICE_X200Y143.A3    net (fanout=21)       2.490   user_addr<6>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    -------------------------------------------------  ---------------------------
+    Total                                      3.457ns (0.467ns logic, 2.990ns route)
+                                                       (13.5% logic, 86.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.311ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_5 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_8 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.284ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_5 to pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.BQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_5
+    SLICE_X200Y143.A4    net (fanout=20)       2.317   user_addr<5>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    -------------------------------------------------  ---------------------------
+    Total                                      3.284ns (0.467ns logic, 2.817ns route)
+                                                       (14.2% logic, 85.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.321ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_7 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_8 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.274ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_7 to pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.DQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_7
+    SLICE_X200Y143.A2    net (fanout=20)       2.307   user_addr<7>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_8
+    -------------------------------------------------  ---------------------------
+    Total                                      3.274ns (0.467ns logic, 2.807ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/reg_file/USER2_PC_DMA_LEN_9 (SLICE_X199Y146.CE), 12 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.138ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_6 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_9 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.457ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_6 to pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.CQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_6
+    SLICE_X200Y143.A3    net (fanout=21)       2.490   user_addr<6>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.457ns (0.467ns logic, 2.990ns route)
+                                                       (13.5% logic, 86.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.311ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_5 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_9 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.284ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_5 to pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.BQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_5
+    SLICE_X200Y143.A4    net (fanout=20)       2.317   user_addr<5>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.284ns (0.467ns logic, 2.817ns route)
+                                                       (14.2% logic, 85.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.321ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_7 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_9 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.274ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_7 to pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.DQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_7
+    SLICE_X200Y143.A2    net (fanout=20)       2.307   user_addr<7>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.274ns (0.467ns logic, 2.807ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/reg_file/USER2_PC_DMA_LEN_10 (SLICE_X199Y146.CE), 12 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.138ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_6 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_10 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.457ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_6 to pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.CQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_6
+    SLICE_X200Y143.A3    net (fanout=21)       2.490   user_addr<6>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    -------------------------------------------------  ---------------------------
+    Total                                      3.457ns (0.467ns logic, 2.990ns route)
+                                                       (13.5% logic, 86.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.311ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_5 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_10 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.284ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_5 to pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.BQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_5
+    SLICE_X200Y143.A4    net (fanout=20)       2.317   user_addr<5>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    -------------------------------------------------  ---------------------------
+    Total                                      3.284ns (0.467ns logic, 2.817ns route)
+                                                       (14.2% logic, 85.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.321ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/app/rx_engine/reg_addr_o_7 (FF)
+  Destination:          pcie/app/reg_file/USER2_PC_DMA_LEN_10 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.274ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.340ns (1.206 - 1.546)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: pcie/app/rx_engine/reg_addr_o_7 to pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y95.DQ     Tcko                  0.223   user_addr<7>
+                                                       pcie/app/rx_engine/reg_addr_o_7
+    SLICE_X200Y143.A2    net (fanout=20)       2.307   user_addr<7>
+    SLICE_X200Y143.A     Tilo                  0.043   pcie/app/gen2.psg2/_n0344<31>5
+                                                       pcie/app/reg_file/_n0604_inv1
+    SLICE_X199Y146.CE    net (fanout=8)        0.500   pcie/app/reg_file/_n0604_inv
+    SLICE_X199Y146.CLK   Tceck                 0.201   pcie/app/reg_file/USER2_PC_DMA_LEN<11>
+                                                       pcie/app/reg_file/USER2_PC_DMA_LEN_10
+    -------------------------------------------------  ---------------------------
+    Total                                      3.274ns (0.467ns logic, 2.807ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_USERCLK2 = PERIOD TIMEGRP "CLK_USERCLK2" TS_SYSCLK * 2.5 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1 (SLICE_X174Y149.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.003ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1 (FF)
+  Destination:          ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.269ns (Levels of Logic = 0)
+  Clock Path Skew:      0.266ns (0.847 - 0.581)
+  Source Clock:         pcie_clk rising at 4.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1 to ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X174Y152.CMUX  Tshcko                0.127   ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<4>
+                                                       ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1
+    SLICE_X174Y149.AX    net (fanout=6)        0.182   ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<1>
+    SLICE_X174Y149.CLK   Tckdi       (-Th)     0.040   ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1<4>
+                                                       ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.269ns (0.087ns logic, 0.182ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/config_ctrl/config_rd_req_o (SLICE_X212Y99.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.005ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/app/config_ctrl/state_FSM_FFd1 (FF)
+  Destination:          pcie/app/config_ctrl/config_rd_req_o (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.270ns (Levels of Logic = 1)
+  Clock Path Skew:      0.265ns (0.913 - 0.648)
+  Source Clock:         pcie_clk rising at 4.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/app/config_ctrl/state_FSM_FFd1 to pcie/app/config_ctrl/config_rd_req_o
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X214Y101.BQ    Tcko                  0.100   pcie/app/config_ctrl/state_FSM_FFd2
+                                                       pcie/app/config_ctrl/state_FSM_FFd1
+    SLICE_X212Y99.B6     net (fanout=39)       0.229   pcie/app/config_ctrl/state_FSM_FFd1
+    SLICE_X212Y99.CLK    Tah         (-Th)     0.059   pcie/app/config_ctrl/config_rd_req_o
+                                                       pcie/app/config_ctrl/config_rd_req_o_rstpot
+                                                       pcie/app/config_ctrl/config_rd_req_o
+    -------------------------------------------------  ---------------------------
+    Total                                      0.270ns (0.041ns logic, 0.229ns route)
+                                                       (15.2% logic, 84.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/rx_engine/rx_tdata_p_7 (SLICE_X205Y99.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.006ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx_tdata_39 (FF)
+  Destination:          pcie/app/rx_engine/rx_tdata_p_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.273ns (Levels of Logic = 0)
+  Clock Path Skew:      0.267ns (0.912 - 0.645)
+  Source Clock:         pcie_clk rising at 4.000ns
+  Destination Clock:    pcie_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx_tdata_39 to pcie/app/rx_engine/rx_tdata_p_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X204Y102.DQ    Tcko                  0.118   pcie/m_axis_rx_tdata<39>
+                                                       pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx_tdata_39
+    SLICE_X205Y99.DX     net (fanout=2)        0.204   pcie/m_axis_rx_tdata<39>
+    SLICE_X205Y99.CLK    Tckdi       (-Th)     0.049   pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_ctl_inst/tcfg_req_cnt<0>
+                                                       pcie/app/rx_engine/rx_tdata_p_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.273ns (0.069ns logic, 0.204ns route)
+                                                       (25.3% logic, 74.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_USERCLK2 = PERIOD TIMEGRP "CLK_USERCLK2" TS_SYSCLK * 2.5 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 4.000ns (250.000MHz) (Tpciper_USERCLK2(Fuserclk2))
+  Physical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK2
+  Logical resource: pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK2
+  Location pin: PCIE_X1Y0.USERCLK2
+  Clock network: pcie_clk
+--------------------------------------------------------------------------------
+Slack: 1.666ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 4.000ns
+  Low pulse: 2.000ns
+  Low pulse limit: 1.167ns (Tmmcmpw_CLKIN1_250_300)
+  Physical resource: pcie/app/ucg/mmcm_inst/CLKIN1
+  Logical resource: pcie/app/ucg/mmcm_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: pcie_clk
+--------------------------------------------------------------------------------
+Slack: 1.666ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 4.000ns
+  High pulse: 2.000ns
+  High pulse limit: 1.167ns (Tmmcmpw_CLKIN1_250_300)
+  Physical resource: pcie/app/ucg/mmcm_inst/CLKIN1
+  Logical resource: pcie/app/ucg/mmcm_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: pcie_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_ICAPCLK = PERIOD TIMEGRP "CLK_ICAPCLK" TS_SYSCLK HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1240 paths analyzed, 729 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.000ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5 (SLICE_X198Y69.SR), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.020ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/user_lnk_up_mux (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.526ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.260ns (3.407 - 3.667)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/user_lnk_up_mux to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X201Y77.DMUX   Tshcko                0.286   user_str3_wr_data<15>
+                                                       pcie/pcie_7x_v1_8_i/user_lnk_up_mux
+    SLICE_X199Y74.D4     net (fanout=9)        0.526   pcie_link_status_OBUF
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X198Y69.SR     net (fanout=5)        0.484   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X198Y69.CLK    Trck                  0.187   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3-In
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.526ns (0.516ns logic, 1.010ns route)
+                                                       (33.8% logic, 66.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/bridge_reset_d (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.506ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.266ns (3.407 - 3.673)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/bridge_reset_d to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X203Y82.DQ     Tcko                  0.223   pcie/user_reset
+                                                       pcie/pcie_7x_v1_8_i/bridge_reset_d
+    SLICE_X199Y74.D5     net (fanout=84)       0.569   pcie/user_reset
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X198Y69.SR     net (fanout=5)        0.484   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X198Y69.CLK    Trck                  0.187   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3-In
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.506ns (0.453ns logic, 1.053ns route)
+                                                       (30.1% logic, 69.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3 (SLICE_X197Y73.SR), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.042ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/user_lnk_up_mux (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.498ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.266ns (3.401 - 3.667)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/user_lnk_up_mux to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X201Y77.DMUX   Tshcko                0.286   user_str3_wr_data<15>
+                                                       pcie/pcie_7x_v1_8_i/user_lnk_up_mux
+    SLICE_X199Y74.D4     net (fanout=9)        0.526   pcie_link_status_OBUF
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X197Y73.SR     net (fanout=5)        0.431   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X197Y73.CLK    Trck                  0.212   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      1.498ns (0.541ns logic, 0.957ns route)
+                                                       (36.1% logic, 63.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.056ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/bridge_reset_d (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.478ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.272ns (3.401 - 3.673)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/bridge_reset_d to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X203Y82.DQ     Tcko                  0.223   pcie/user_reset
+                                                       pcie/pcie_7x_v1_8_i/bridge_reset_d
+    SLICE_X199Y74.D5     net (fanout=84)       0.569   pcie/user_reset
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X197Y73.SR     net (fanout=5)        0.431   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X197Y73.CLK    Trck                  0.212   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      1.478ns (0.478ns logic, 1.000ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7 (SLICE_X197Y73.SR), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.042ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/user_lnk_up_mux (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.498ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.266ns (3.401 - 3.667)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/user_lnk_up_mux to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X201Y77.DMUX   Tshcko                0.286   user_str3_wr_data<15>
+                                                       pcie/pcie_7x_v1_8_i/user_lnk_up_mux
+    SLICE_X199Y74.D4     net (fanout=9)        0.526   pcie_link_status_OBUF
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X197Y73.SR     net (fanout=5)        0.431   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X197Y73.CLK    Trck                  0.212   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+    -------------------------------------------------  ---------------------------
+    Total                                      1.498ns (0.541ns logic, 0.957ns route)
+                                                       (36.1% logic, 63.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.056ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/bridge_reset_d (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7 (FF)
+  Requirement:          2.000ns
+  Data Path Delay:      1.478ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.272ns (3.401 - 3.673)
+  Source Clock:         pcie_clk rising at 8.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.194ns
+
+  Clock Uncertainty:          0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.129ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/bridge_reset_d to pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X203Y82.DQ     Tcko                  0.223   pcie/user_reset
+                                                       pcie/pcie_7x_v1_8_i/bridge_reset_d
+    SLICE_X199Y74.D5     net (fanout=84)       0.569   pcie/user_reset
+    SLICE_X199Y74.D      Tilo                  0.043   pcie/app/gen4.psg4/fifo2_rd_data<55>
+                                                       pcie/app/engine_reset_n_INV_98_o1
+    SLICE_X197Y73.SR     net (fanout=5)        0.431   pcie/app/engine_reset_n_INV_98_o
+    SLICE_X197Y73.CLK    Trck                  0.212   pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state_FSM_FFd7
+    -------------------------------------------------  ---------------------------
+    Total                                      1.478ns (0.478ns logic, 1.000ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_ICAPCLK = PERIOD TIMEGRP "CLK_ICAPCLK" TS_SYSCLK HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/config_ctrl/icap_en (SLICE_X204Y75.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.120ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/app/config_ctrl/conf_state (FF)
+  Destination:          pcie/app/config_ctrl/icap_en (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.131ns (Levels of Logic = 1)
+  Clock Path Skew:      0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/icap_clk rising at 10.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/app/config_ctrl/conf_state to pcie/app/config_ctrl/icap_en
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X205Y75.AQ     Tcko                  0.100   pcie/app/config_ctrl/rd_en
+                                                       pcie/app/config_ctrl/conf_state
+    SLICE_X204Y75.A5     net (fanout=2)        0.090   pcie/app/config_ctrl/conf_state
+    SLICE_X204Y75.CLK    Tah         (-Th)     0.059   pcie/app/config_ctrl/icap_en
+                                                       pcie/app/config_ctrl/icap_en_rstpot
+                                                       pcie/app/config_ctrl/icap_en
+    -------------------------------------------------  ---------------------------
+    Total                                      0.131ns (0.041ns logic, 0.090ns route)
+                                                       (31.3% logic, 68.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_7 (SLICE_X204Y54.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.126ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5 (FF)
+  Destination:          pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.137ns (Levels of Logic = 1)
+  Clock Path Skew:      0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/icap_clk rising at 10.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5 to pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X205Y54.CQ     Tcko                  0.100   pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<6>
+                                                       pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5
+    SLICE_X204Y54.B6     net (fanout=6)        0.096   pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<5>
+    SLICE_X204Y54.CLK    Tah         (-Th)     0.059   pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<7>
+                                                       pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/Madd_gc0.count[10]_GND_350_o_add_0_OUT_xor<7>11
+                                                       pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.137ns (0.041ns logic, 0.096ns route)
+                                                       (29.9% logic, 70.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/app/ucg/mmcm_drp_inst/DI_15 (SLICE_X195Y52.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.134ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/app/ucg/mmcm_drp_inst/rom_do_15 (FF)
+  Destination:          pcie/app/ucg/mmcm_drp_inst/DI_15 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.168ns (Levels of Logic = 1)
+  Clock Path Skew:      0.034ns (0.461 - 0.427)
+  Source Clock:         pcie/icap_clk rising at 10.000ns
+  Destination Clock:    pcie/icap_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/app/ucg/mmcm_drp_inst/rom_do_15 to pcie/app/ucg/mmcm_drp_inst/DI_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X199Y52.CQ     Tcko                  0.100   pcie/app/ucg/mmcm_drp_inst/rom_do<16>
+                                                       pcie/app/ucg/mmcm_drp_inst/rom_do_15
+    SLICE_X195Y52.A6     net (fanout=1)        0.100   pcie/app/ucg/mmcm_drp_inst/rom_do<15>
+    SLICE_X195Y52.CLK    Tah         (-Th)     0.032   pcie/app/ucg/mmcm_drp_inst/DI<15>
+                                                       pcie/app/ucg/mmcm_drp_inst/current_state__n0130<15>1
+                                                       pcie/app/ucg/mmcm_drp_inst/DI_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.168ns (0.068ns logic, 0.100ns route)
+                                                       (40.5% logic, 59.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_ICAPCLK = PERIOD TIMEGRP "CLK_ICAPCLK" TS_SYSCLK HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 10.000ns (100.000MHz) (Tcapper)
+  Physical resource: pcie/app/config_ctrl/ICAPE2_inst/CLK
+  Logical resource: pcie/app/config_ctrl/ICAPE2_inst/CLK
+  Location pin: ICAP_X0Y0.CLK
+  Clock network: pcie/icap_clk
+--------------------------------------------------------------------------------
+Slack: 8.161ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKB)
+  Physical resource: pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram/CLKBWRCLKL
+  Logical resource: pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram/CLKBWRCLKL
+  Location pin: RAMB36_X13Y15.CLKBWRCLKL
+  Clock network: pcie/icap_clk
+--------------------------------------------------------------------------------
+Slack: 8.161ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLK_WF_NC(FMAX_BRAM_WF_NC))
+  Physical resource: pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram/CLKBWRCLKU
+  Logical resource: pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.SIMPLE_PRIM36.ram/CLKBWRCLKU
+  Location pin: RAMB36_X13Y15.CLKBWRCLKU
+  Clock network: pcie/icap_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_USER = PERIOD TIMEGRP "CLK_USER" 250 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   1.839ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_USER = PERIOD TIMEGRP "CLK_USER" 250 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKARDCLKL
+  Logical resource: ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKARDCLKL
+  Location pin: RAMB36_X12Y15.CLKARDCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKB)
+  Physical resource: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Logical resource: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Location pin: RAMB36_X12Y29.CLKBWRCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKB)
+  Physical resource: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Logical resource: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Location pin: RAMB36_X12Y27.CLKBWRCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_PIPE_RATE = MAXDELAY FROM TIMEGRP "MC_PIPE" 
+TS_CLK_USERCLK * 0.5;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 932 paths analyzed, 548 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   2.319ns.
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel (SLICE_X218Y138.D6), 11 paths
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.681ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.111ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.017ns (0.103 - 0.120)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y130.CQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14
+    SLICE_X217Y129.B1    net (fanout=4)        0.545   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14
+    SLICE_X217Y129.B     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd3
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X217Y129.A4    net (fanout=1)        0.232   pcie/pcie_7x_v1_8_i/N12
+    SLICE_X217Y129.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd3
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B2    net (fanout=2)        0.540   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o11111
+    SLICE_X218Y138.D6    net (fanout=2)        0.433   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o1111
+    SLICE_X218Y138.CLK   Tas                   0.009   pcie/PIPE_PCLK_SEL_OUT<3>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_pclk_sel_Select_104_o
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    -------------------------------------------------  ---------------------------
+    Total                                      2.111ns (0.361ns logic, 1.750ns route)
+                                                       (17.1% logic, 82.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.026ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.014ns (0.103 - 0.117)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y128.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X217Y129.B3    net (fanout=6)        0.460   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X217Y129.B     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd3
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X217Y129.A4    net (fanout=1)        0.232   pcie/pcie_7x_v1_8_i/N12
+    SLICE_X217Y129.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd3
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B2    net (fanout=2)        0.540   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o11111
+    SLICE_X218Y138.D6    net (fanout=2)        0.433   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o1111
+    SLICE_X218Y138.CLK   Tas                   0.009   pcie/PIPE_PCLK_SEL_OUT<3>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_pclk_sel_Select_104_o
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    -------------------------------------------------  ---------------------------
+    Total                                      2.026ns (0.361ns logic, 1.665ns route)
+                                                       (17.8% logic, 82.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.840ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd6 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      1.929ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.040ns (0.807 - 0.847)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd6 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X215Y128.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd6
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd6
+    SLICE_X217Y129.A1    net (fanout=8)        0.638   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd6
+    SLICE_X217Y129.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd3
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B2    net (fanout=2)        0.540   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X220Y130.B     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o11111
+    SLICE_X218Y138.D6    net (fanout=2)        0.433   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_gen3_exit_Select_89_o1111
+    SLICE_X218Y138.CLK   Tas                   0.009   pcie/PIPE_PCLK_SEL_OUT<3>
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm[23]_pclk_sel_Select_104_o
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/pclk_sel
+    -------------------------------------------------  ---------------------------
+    Total                                      1.929ns (0.318ns logic, 1.611ns route)
+                                                       (16.5% logic, 83.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0 (SLICE_X220Y141.B1), 15 paths
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.686ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.074ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.049ns (0.809 - 0.858)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y136.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X219Y139.D3    net (fanout=6)        0.503   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X219Y139.D     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X219Y139.C2    net (fanout=1)        0.458   pcie/pcie_7x_v1_8_i/N28
+    SLICE_X219Y139.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A5    net (fanout=2)        0.327   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd19
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.B1    net (fanout=2)        0.456   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.CLK   Tas                  -0.022   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllreset
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm[23]_rate_out[2]_select_107_OUT<0>1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.074ns (0.330ns logic, 1.744ns route)
+                                                       (15.9% logic, 84.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.724ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd12 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.033ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.052ns (0.809 - 0.861)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd12 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X219Y140.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_sync_i/txsync_done
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd12
+    SLICE_X219Y139.D2    net (fanout=4)        0.462   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd12
+    SLICE_X219Y139.D     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X219Y139.C2    net (fanout=1)        0.458   pcie/pcie_7x_v1_8_i/N28
+    SLICE_X219Y139.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A5    net (fanout=2)        0.327   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd19
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.B1    net (fanout=2)        0.456   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.CLK   Tas                  -0.022   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllreset
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm[23]_rate_out[2]_select_107_OUT<0>1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.033ns (0.330ns logic, 1.703ns route)
+                                                       (16.2% logic, 83.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.839ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      1.921ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.049ns (0.809 - 0.858)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y136.DQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+    SLICE_X219Y139.D5    net (fanout=4)        0.350   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+    SLICE_X219Y139.D     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X219Y139.C2    net (fanout=1)        0.458   pcie/pcie_7x_v1_8_i/N28
+    SLICE_X219Y139.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/txratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A5    net (fanout=2)        0.327   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X219Y142.A     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd19
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.B1    net (fanout=2)        0.456   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X220Y141.CLK   Tas                  -0.022   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllreset
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/fsm[23]_rate_out[2]_select_107_OUT<0>1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_rate.pipe_rate_i/rate_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.921ns (0.330ns logic, 1.591ns route)
+                                                       (17.2% logic, 82.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd (SLICE_X221Y141.D1), 15 paths
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.706ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      2.056ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.047ns (0.809 - 0.856)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y135.DQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+    SLICE_X219Y141.D1    net (fanout=4)        0.720   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+    SLICE_X219Y141.D     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd15
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X219Y141.C5    net (fanout=1)        0.150   pcie/pcie_7x_v1_8_i/N36
+    SLICE_X219Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd15
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C3    net (fanout=2)        0.364   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.D1    net (fanout=2)        0.461   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.CLK   Tas                   0.009   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm[23]_qpllpd_Select_93_o1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    -------------------------------------------------  ---------------------------
+    Total                                      2.056ns (0.361ns logic, 1.695ns route)
+                                                       (17.6% logic, 82.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.852ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      1.910ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.047ns (0.809 - 0.856)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd9 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y135.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd10
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X219Y141.D4    net (fanout=6)        0.574   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd9
+    SLICE_X219Y141.D     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd15
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711_SW0
+    SLICE_X219Y141.C5    net (fanout=1)        0.150   pcie/pcie_7x_v1_8_i/N36
+    SLICE_X219Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd15
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C3    net (fanout=2)        0.364   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.D1    net (fanout=2)        0.461   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.CLK   Tas                   0.009   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm[23]_qpllpd_Select_93_o1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    -------------------------------------------------  ---------------------------
+    Total                                      1.910ns (0.361ns logic, 1.549ns route)
+                                                       (18.9% logic, 81.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup paths):    5.917ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd21 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      1.839ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.053ns (0.809 - 0.862)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 0.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.191ns
+
+  Clock Uncertainty:          0.191ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd21 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X214Y146.AQ    Tcko                  0.223   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd21
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd21
+    SLICE_X219Y141.C1    net (fanout=4)        0.696   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd21
+    SLICE_X219Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm_FSM_FFd15
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C3    net (fanout=2)        0.364   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n033711
+    SLICE_X221Y141.C     Tilo                  0.043   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.D1    net (fanout=2)        0.461   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm__n03371
+    SLICE_X221Y141.CLK   Tas                   0.009   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/fsm[23]_qpllpd_Select_93_o1
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_rate.pipe_rate_i/qpllpd
+    -------------------------------------------------  ---------------------------
+    Total                                      1.839ns (0.318ns logic, 1.521ns route)
+                                                       (17.3% logic, 82.7% route)
+
+--------------------------------------------------------------------------------
+Hold Paths: TS_PIPE_RATE = MAXDELAY FROM TIMEGRP "MC_PIPE" TS_CLK_USERCLK * 0.5;
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_drp_i/start_reg1 (SLICE_X214Y135.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.006ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd13 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_drp_i/start_reg1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.363ns (Levels of Logic = 0)
+  Positive Clock Path Skew: 0.286ns (1.830 - 1.544)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 8.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.071ns
+
+  Clock Uncertainty:          0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd13 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_drp_i/start_reg1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X217Y145.BQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd14
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd13
+    SLICE_X214Y135.BX    net (fanout=8)        0.301   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_rate.pipe_rate_i/fsm_FSM_FFd13
+    SLICE_X214Y135.CLK   Tckdi       (-Th)     0.038   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_drp_i/start_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_drp_i/start_reg1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.363ns (0.062ns logic, 0.301ns route)
+                                                       (17.1% logic, 82.9% route)
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone (SLICE_X216Y123.D5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.119ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/phystatus (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.130ns (Levels of Logic = 1)
+  Positive Clock Path Skew: 0.011ns (0.063 - 0.052)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Destination Clock:    pcie/PIPE_OOBCLK_IN rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/phystatus to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X217Y123.DQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/phystatus
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/phystatus
+    SLICE_X216Y123.D5    net (fanout=2)        0.089   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/phystatus
+    SLICE_X216Y123.CLK   Tah         (-Th)     0.059   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone_glue_set
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/ratedone
+    -------------------------------------------------  ---------------------------
+    Total                                      0.130ns (0.041ns logic, 0.089ns route)
+                                                       (31.5% logic, 68.5% route)
+--------------------------------------------------------------------------------
+
+Paths for end point pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/start_reg1 (SLICE_X215Y117.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.126ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd13 (FF)
+  Destination:          pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/start_reg1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.488ns (Levels of Logic = 0)
+  Positive Clock Path Skew: 0.291ns (1.827 - 1.536)
+  Source Clock:         pcie/PIPE_OOBCLK_IN rising at 8.000ns
+  Destination Clock:    pcie/PIPE_DCLK_IN rising at 8.000ns
+  Clock Uncertainty:    0.071ns
+
+  Clock Uncertainty:          0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.123ns
+    Phase Error (PE):           0.000ns
+
+  Minimum Data Path at Fast Process Corner: pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd13 to pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/start_reg1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X218Y130.BQ    Tcko                  0.100   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd14
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd13
+    SLICE_X215Y117.AX    net (fanout=8)        0.428   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_rate.pipe_rate_i/fsm_FSM_FFd13
+    SLICE_X215Y117.CLK   Tckdi       (-Th)     0.040   pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/start_reg2
+                                                       pcie/pcie_7x_v1_8_i/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_drp_i/start_reg1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.488ns (0.060ns logic, 0.428ns route)
+                                                       (12.3% logic, 87.7% route)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_pcie_app_ucg_clk0_bufgin = PERIOD TIMEGRP 
+"pcie_app_ucg_clk0_bufgin"         TS_CLK_USERCLK2 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 4131 paths analyzed, 2919 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.924ns.
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_1 (SLICE_X172Y82.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_1 (FF)
+  Destination:          ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_1 (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.584ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.137ns (1.565 - 1.702)
+  Source Clock:         pcie_clk rising at 0.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.203ns
+
+  Clock Uncertainty:          0.203ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.138ns
+
+  Maximum Data Path at Slow Process Corner: ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_1 to ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X173Y82.AMUX   Tshcko                0.287   ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/D<4>
+                                                       ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_1
+    SLICE_X172Y82.CX     net (fanout=1)        3.297   ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/D<1>
+    SLICE_X172Y82.CLK    Tdick                 0.000   ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg<1>
+                                                       ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.584ns (0.287ns logic, 3.297ns route)
+                                                       (8.0% logic, 92.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAMB36_X12Y27.WEBWEL3), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.366ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ult/ul/o_pcie_str3_data_valid (FF)
+  Destination:          ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      3.609ns (Levels of Logic = 1)
+  Clock Path Skew:      0.040ns (0.789 - 0.749)
+  Source Clock:         user_clk rising at 0.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ult/ul/o_pcie_str3_data_valid to ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X177Y110.AQ        Tcko                  0.223   ult/user_adpt_str3_data_valid
+                                                           ult/ul/o_pcie_str3_data_valid
+    SLICE_X174Y119.A1        net (fanout=2)        1.175   ult/user_adpt_str3_data_valid
+    SLICE_X174Y119.A         Tilo                  0.043   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1
+    RAMB36_X12Y27.WEBWEL3    net (fanout=26)       1.764   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+    RAMB36_X12Y27.CLKBWRCLKL Trcck_WEB             0.404   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          3.609ns (0.670ns logic, 2.939ns route)
+                                                           (18.6% logic, 81.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.112ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i (FF)
+  Destination:          ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      2.872ns (Levels of Logic = 1)
+  Clock Path Skew:      0.049ns (0.789 - 0.740)
+  Source Clock:         user_clk rising at 0.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i to ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X175Y119.DQ        Tcko                  0.223   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+    SLICE_X174Y119.A2        net (fanout=2)        0.438   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+    SLICE_X174Y119.A         Tilo                  0.043   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1
+    RAMB36_X12Y27.WEBWEL3    net (fanout=26)       1.764   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+    RAMB36_X12Y27.CLKBWRCLKL Trcck_WEB             0.404   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          2.872ns (0.670ns logic, 2.202ns route)
+                                                           (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAMB36_X12Y27.WEBWEL7), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.366ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ult/ul/o_pcie_str3_data_valid (FF)
+  Destination:          ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      3.609ns (Levels of Logic = 1)
+  Clock Path Skew:      0.040ns (0.789 - 0.749)
+  Source Clock:         user_clk rising at 0.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ult/ul/o_pcie_str3_data_valid to ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X177Y110.AQ        Tcko                  0.223   ult/user_adpt_str3_data_valid
+                                                           ult/ul/o_pcie_str3_data_valid
+    SLICE_X174Y119.A1        net (fanout=2)        1.175   ult/user_adpt_str3_data_valid
+    SLICE_X174Y119.A         Tilo                  0.043   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1
+    RAMB36_X12Y27.WEBWEL7    net (fanout=26)       1.764   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+    RAMB36_X12Y27.CLKBWRCLKL Trcck_WEB             0.404   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          3.609ns (0.670ns logic, 2.939ns route)
+                                                           (18.6% logic, 81.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.112ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i (FF)
+  Destination:          ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          4.000ns
+  Data Path Delay:      2.872ns (Levels of Logic = 1)
+  Clock Path Skew:      0.049ns (0.789 - 0.740)
+  Source Clock:         user_clk rising at 0.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.065ns
+
+  Clock Uncertainty:          0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.108ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i to ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X175Y119.DQ        Tcko                  0.223   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+    SLICE_X174Y119.A2        net (fanout=2)        0.438   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i
+    SLICE_X174Y119.A         Tilo                  0.043   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1
+    RAMB36_X12Y27.WEBWEL7    net (fanout=26)       1.764   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/ram_wr_en
+    RAMB36_X12Y27.CLKBWRCLKL Trcck_WEB             0.404   ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                           ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          2.872ns (0.670ns logic, 2.202ns route)
+                                                           (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_pcie_app_ucg_clk0_bufgin = PERIOD TIMEGRP "pcie_app_ucg_clk0_bufgin"
+        TS_CLK_USERCLK2 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAMB36_X12Y29.ADDRBWRADDRL11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.023ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5 (FF)
+  Destination:          ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.329ns (Levels of Logic = 0)
+  Clock Path Skew:      0.306ns (0.913 - 0.607)
+  Source Clock:         user_clk rising at 4.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5 to ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                     Delay type         Delay(ns)  Physical Resource
+                                                               Logical Resource(s)
+    ---------------------------------------------------------  -------------------
+    SLICE_X179Y157.DQ            Tcko                  0.100   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<5>
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5
+    RAMB36_X12Y29.ADDRBWRADDRL11 net (fanout=4)        0.412   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<5>
+    RAMB36_X12Y29.CLKBWRCLKL     Trckc_ADDRB (-Th)     0.183   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    ---------------------------------------------------------  ---------------------------
+    Total                                              0.329ns (-0.083ns logic, 0.412ns route)
+                                                               (-25.2% logic, 125.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAMB36_X12Y29.ADDRBWRADDRU11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.023ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5 (FF)
+  Destination:          ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.329ns (Levels of Logic = 0)
+  Clock Path Skew:      0.306ns (0.913 - 0.607)
+  Source Clock:         user_clk rising at 4.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5 to ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                     Delay type         Delay(ns)  Physical Resource
+                                                               Logical Resource(s)
+    ---------------------------------------------------------  -------------------
+    SLICE_X179Y157.DQ            Tcko                  0.100   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<5>
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5
+    RAMB36_X12Y29.ADDRBWRADDRU11 net (fanout=4)        0.412   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<5>
+    RAMB36_X12Y29.CLKBWRCLKU     Trckc_ADDRB (-Th)     0.183   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    ---------------------------------------------------------  ---------------------------
+    Total                                              0.329ns (-0.083ns logic, 0.412ns route)
+                                                               (-25.2% logic, 125.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAMB36_X12Y29.ADDRBWRADDRL10), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.048ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_4 (FF)
+  Destination:          ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.354ns (Levels of Logic = 0)
+  Clock Path Skew:      0.306ns (0.913 - 0.607)
+  Source Clock:         user_clk rising at 4.000ns
+  Destination Clock:    user_clk rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_4 to ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    Location                     Delay type         Delay(ns)  Physical Resource
+                                                               Logical Resource(s)
+    ---------------------------------------------------------  -------------------
+    SLICE_X179Y157.CQ            Tcko                  0.100   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<5>
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_4
+    RAMB36_X12Y29.ADDRBWRADDRL10 net (fanout=3)        0.437   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2<4>
+    RAMB36_X12Y29.CLKBWRCLKL     Trckc_ADDRB (-Th)     0.183   ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+                                                               ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram
+    ---------------------------------------------------------  ---------------------------
+    Total                                              0.354ns (-0.083ns logic, 0.437ns route)
+                                                               (-23.4% logic, 123.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_pcie_app_ucg_clk0_bufgin = PERIOD TIMEGRP "pcie_app_ucg_clk0_bufgin"
+        TS_CLK_USERCLK2 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKARDCLKL
+  Logical resource: ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKARDCLKL
+  Location pin: RAMB36_X12Y15.CLKARDCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKB)
+  Physical resource: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Logical resource: ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Location pin: RAMB36_X12Y29.CLKBWRCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+Slack: 2.161ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKB)
+  Physical resource: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Logical resource: ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram/CLKBWRCLKL
+  Location pin: RAMB36_X12Y27.CLKBWRCLKL
+  Clock network: user_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Pin to Pin Skew Constraint;
+
+ 2 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+--------------------------------------------------------------------------------
+Slack:                  0.076ns (maxskew - uncertainty - (arrival1 - arrival2))
+  Max skew:             0.560ns
+  Arrival 1:            1.834ns pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/PIPECLK
+  Arrival 2:            1.541ns pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK
+  Clock Uncertainty:    0.191ns
+
+--------------------------------------------------------------------------------
+Slack:                  0.084ns (maxskew - uncertainty - (arrival1 - arrival2))
+  Max skew:             0.560ns
+  Arrival 1:            1.832ns pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK2
+  Arrival 2:            1.541ns pcie/pcie_7x_v1_8_i/pcie_top_i/pcie_7x_i/pcie_block_i/USERCLK
+  Clock Uncertainty:    0.185ns
+
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_SYSCLK
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_SYSCLK                      |     10.000ns|      1.538ns|     10.000ns|            0|            0|            0|       143482|
+| TS_CLK_250                    |      4.000ns|      4.000ns|          N/A|            0|            0|         2871|            0|
+| TS_CLK_125                    |      8.000ns|      5.714ns|          N/A|            0|            0|         1461|            0|
+| TS_CLK_USERCLK                |      4.000ns|      3.460ns|      1.160ns|            0|            0|          725|          932|
+|  TS_PIPE_RATE                 |      8.000ns|      2.319ns|          N/A|            0|            0|          932|            0|
+| TS_CLK_USERCLK2               |      4.000ns|      4.000ns|      3.924ns|            0|            0|       132122|         4131|
+|  TS_pcie_app_ucg_clk0_bufgin  |      4.000ns|      3.924ns|          N/A|            0|            0|         4131|            0|
+| TS_CLK_ICAPCLK                |     10.000ns|     10.000ns|          N/A|            0|            0|         1240|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 143482 paths, 0 nets, and 30118 connections
+
+Design statistics:
+   Minimum period:  10.000ns{1}   (Maximum frequency: 100.000MHz)
+   Maximum path delay from/to any node:   2.319ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Jul 02 14:52:10 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 1007 MB
+
+
+
