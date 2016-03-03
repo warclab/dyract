@@ -1,0 +1,107 @@
+Release 14.7 ngdbuild P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+ise -p xc7vx485tffg1761-2 -dd _ngo -uc thresholder.ucf thresholder.edf
+
+Executing edif2ngd -quiet "thresholder.edf" "_ngo\thresholder.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading NGO file
+"E:/mygit/dyract/hw/ise_flow/vc707/PlanAhead/project_1/project_1.runs/thresholde
+r/_ngo/thresholder.ngo" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "thresholder.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin TXOUTCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin RXOUTCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[3].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin RXOUTCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin RXOUTCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin RXOUTCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i
+   because the signal path to this output pin depends upon block attribute
+   settings. Constraint distribution does not support attribute dependent
+   distribution.
+
+WARNING:ConstraintSystem - Constraint <NET "pcie/sys_clk" TNM_NET = "SYSCLK";>
+   [thresholder.ucf(167)] was not distributed to the output pin QPLLOUTREFCLK of
+   block
+   gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_quad.pipe_common.qpll_wrapper_i/gtx
+   _common.gtxe2_common_i because the signal path to this output pin depends
+   upon block attribute settings. Constraint distribution does not support
+   attribute dependent distribution.
+
+INFO:ConstraintSystem:178 - TNM 'CLK_USERCLK2', used in period specification
+   'TS_CLK_USERCLK2', was traced into MMCME2_ADV instance app/ucg/mmcm_inst. The
+   following new TNM groups and period specifications were generated at the
+   MMCME2_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_pcie_app_ucg_clk0_bufgin = PERIOD
+   "pcie_app_ucg_clk0_bufgin" TS_CLK_USERCLK2 HIGH 50%>
+
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+WARNING:NgdBuild:486 - Attribute "CLOCK_HOLD" is not allowed on symbol
+   "app/ucg/mmcm_inst" of type "MMCME2_ADV".  This attribute will be ignored.
+
+Partition Implementation Status
+-------------------------------
+
+  Preserved Partitions:
+
+
+  Implemented Partitions:
+
+    Partition "/top":
+Attribute STATE set to IMPLEMENT.
+
+    Partition "/top/ult" (Reconfigurable Module "thresholder"):
+Attribute STATE set to IMPLEMENT.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   7
+
+Total memory usage is 216236 kilobytes
+
+Writing NGD file "thresholder.ngd" ...
+Total REAL time to NGDBUILD completion:  45 sec
+Total CPU time to NGDBUILD completion:   27 sec
+
+Writing NGDBUILD log file "thresholder.bld"...

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<PartialReconfig Version="1" Minor="8">
+	<Partitions>
+		<Partition Name="top" Reconfigurable="FALSE" PromotedLocation="$PROMOTEDIR/Xthresholder">
+			<Partition Name="ult" CurrPRModule="inverter" Reconfigurable="TRUE">
+				<PRModule Name="thresholder" PromotedLocation="$PROMOTEDIR/Xthresholder">
+				</PRModule>
+				<PRModule Name="inverter">
+				</PRModule>
+			</Partition>
+		</Partition>
+	</Partitions>
+	<Configs>
+		<Config Name="thresholder" State="PROMOTED" PromotedLocation="$PROMOTEDIR/Xthresholder" RunType="Implementation">
+			<PRConfigInst PRInst="top" State="IMPLEMENT">
+			</PRConfigInst>
+			<PRConfigInst PRInst="ult" PRModule="thresholder" State="IMPLEMENT">
+			</PRConfigInst>
+		</Config>
+		<Config Name="inverter" State="INITIAL" RunType="Implementation">
+			<PRConfigInst PRInst="top" State="IMPORT" ImportLocation="$PROMOTEDIR/Xthresholder">
+			</PRConfigInst>
+			<PRConfigInst PRInst="ult" PRModule="inverter" State="IMPLEMENT">
+			</PRConfigInst>
+		</Config>
+	</Configs>
+</PartialReconfig>
+

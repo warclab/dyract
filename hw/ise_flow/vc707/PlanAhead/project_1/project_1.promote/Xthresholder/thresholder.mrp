@@ -1,0 +1,1909 @@
+Release 14.7 Map P.20131013 (nt)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle pa -w thresholder.ngd 
+Target Device  : xc7vx485t
+Target Package : ffg1761
+Target Speed   : -2
+Mapper Version : virtex7 -- $Revision: 1.55 $
+Mapped Date    : Thu Mar 03 23:21:31 2016
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    4
+Slice Logic Utilization:
+  Number of Slice Registers:                 7,049 out of 607,200    1%
+    Number used as Flip Flops:               7,049
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      5,989 out of 303,600    1%
+    Number used as logic:                    5,199 out of 303,600    1%
+      Number using O6 output only:           3,236
+      Number using O5 output only:             481
+      Number using O5 and O6:                1,482
+      Number used as ROM:                        0
+    Number used as Memory:                       7 out of 130,800    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             7
+        Number using O6 output only:             7
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:    783
+      Number with same-slice register load:    752
+      Number with same-slice carry load:        31
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 2,523 out of  75,900    3%
+  Number of LUT Flip Flop pairs used:        7,840
+    Number with an unused Flip Flop:         1,984 out of   7,840   25%
+    Number with an unused LUT:               1,851 out of   7,840   23%
+    Number of fully used LUT-FF pairs:       4,005 out of   7,840   51%
+    Number of unique control sets:             316
+    Number of slice register sites lost
+      to control set restrictions:           1,272 out of 607,200    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                         3 out of     700    1%
+    Number of LOCed IOBs:                        3 out of       3  100%
+    Number of bonded IPADs:                     10
+    Number of bonded OPADs:                      8
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                 26 out of   1,030    2%
+    Number using RAMB36E1 only:                 26
+    Number using FIFO36E1 only:                  0
+  Number of RAMB18E1/FIFO18E1s:                  0 out of   2,060    0%
+  Number of BUFG/BUFGCTRLs:                      8 out of      32   25%
+    Number used as BUFGs:                        7
+    Number used as BUFGCTRLs:                    1
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     700    0%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     700    0%
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0 out of     700    0%
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:        0 out of     700    0%
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      56    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      56    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of     168    0%
+  Number of BUFRs:                               0 out of      56    0%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            0 out of   2,800    0%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of GTXE2_CHANNELs:                      4 out of      56    7%
+    Number of LOCed GTXE2_CHANNELs:              4 out of       4  100%
+  Number of GTXE2_COMMONs:                       1 out of      14    7%
+  Number of IBUFDS_GTE2s:                        1 out of      28    3%
+    Number of LOCed IBUFDS_GTE2s:                1 out of       1  100%
+  Number of ICAPs:                               1 out of       2   50%
+  Number of IDELAYCTRLs:                         0 out of      14    0%
+  Number of IN_FIFOs:                            0 out of      56    0%
+  Number of MMCME2_ADVs:                         2 out of      14   14%
+    Number of LOCed MMCME2_ADVs:                 1 out of       2   50%
+  Number of OUT_FIFOs:                           0 out of      56    0%
+  Number of PCIE_2_1s:                           1 out of       4   25%
+    Number of LOCed PCIE_2_1s:                   1 out of       1  100%
+  Number of PHASER_REFs:                         0 out of      14    0%
+  Number of PHY_CONTROLs:                        0 out of      14    0%
+  Number of PLLE2_ADVs:                          0 out of      14    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                2.87
+
+Peak Memory Usage:  1337 MB
+Total REAL time to MAP completion:  24 mins 25 secs 
+Total CPU time to MAP completion:   23 mins 58 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:701 - PAD symbol "heartbeat" has an undefined IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "sys_clk_n" is not constrained (LOC) to a specific
+   location.
+WARNING:PhysDesignRules:2452 - The IOB pcie_link_status is either not
+   constrained (LOC) to a specific location and/or has an undefined I/O Standard
+   (IOSTANDARD). This condition may seriously affect the device and will be an
+   error in bitstream creation. It should be corrected by properly specifying
+   the pin location and I/O Standard.
+WARNING:PhysDesignRules:2452 - The IOB heartbeat is either not constrained (LOC)
+   to a specific location and/or has an undefined I/O Standard (IOSTANDARD).
+   This condition may seriously affect the device and will be an error in
+   bitstream creation. It should be corrected by properly specifying the pin
+   location and I/O Standard.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network ult/ula/adpt_rd_fifo_4/s_axis_tready has no load.
+INFO:LIT:395 - The above info message is repeated 292 more times for the
+   following (max. 5 shown):
+   ult/ula/adpt_rd_fifo_3/s_axis_tready,
+   ult/ula/adpt_rd_fifo_2/s_axis_tready,
+   ult/ula/adpt_rd_fifo_1/s_axis_tready,
+   ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/g
+   ntv_or_sync_fifo.mem/dout_i[56],
+   ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/g
+   ntv_or_sync_fifo.mem/dout_i[48]
+   To see the details of these info messages, please use the -detail switch.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.970 Volts. (default - Range: 0.970 to
+   1.030 Volts)
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
+   Command Line Tools User Guide for information on generating a TSI report.
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 130 block(s) removed
+ 113 block(s) optimized away
+ 402 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "pcie/app/tx_engine/s_axis_tx_tkeep[0]" is loadless and has been
+removed.
+ Loadless block "pcie/app/tx_engine/s_axis_tx_tkeep_0" (FF) removed.
+  The signal "pcie/app/tx_engine/state[3]_s_axis_tx_tkeep[7]_wide_mux_48_OUT[3]"
+is loadless and has been removed.
+   Loadless block
+"pcie/app/tx_engine/state_state[3]_s_axis_tx_tkeep[7]_wide_mux_48_OUT<3>1" (ROM)
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_lane_reversal_mode[1]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_lane_reversal_mode[0]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_do[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_err_cor" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[11]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[10]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[9]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[8]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cpld[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_cplh[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_root_control_syserr_non_fatal_err_en" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_pmcsr_pme_status" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dstatus[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dstatus[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dstatus[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dstatus[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_received_func_lvl_rst" is loadless and has
+been removed.
+ Loadless block "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_received_func_lvl_rst1_INV_0"
+(BUF) removed.
+  The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_received_func_lvl_rst_n" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_ecrc_check_en" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_pm_as_nak" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_msixfm" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_mmenable[2]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_mmenable[1]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_mmenable[0]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_err_cpl_rdy" is loadless and has been
+removed.
+ Loadless block "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_err_cpl_rdy1_INV_0" (BUF)
+removed.
+  The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_err_cpl_rdy_n" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_err_aer_headerlog_set" is loadless and has
+been removed.
+ Loadless block "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_err_aer_headerlog_set1_INV_0"
+(BUF) removed.
+  The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_err_aer_headerlog_set_n" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_slot_control_electromech_il_ctl_pulse" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_root_control_syserr_corr_err_en" is loadless
+and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_pmcsr_powerstate[1]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_pmcsr_powerstate[0]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_err_non_fatal" is loadless and
+has been removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/reg_tkeep
+[7]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/reg_tkeep
+_7" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/tkeep[7]_
+null_rx_tkeep[7]_mux_17_OUT[7]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_tkee
+p[7]_null_rx_tkeep[7]_mux_17_OUT81" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/N143" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/null_is_e
+of<1>14_SW4" (ROM) removed.
+      The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rrem_
+prev_0" is loadless and has been removed.
+       Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rrem_
+prev_0" (SFF) removed.
+        The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rrem" is loadless and has been
+removed.
+    The signal "pcie/pcie_7x_v1_8_i/N142" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/null_is_e
+of<1>14_SW3" (ROM) removed.
+      The signal "pcie/pcie_7x_v1_8_i/N154" is loadless and has been removed.
+       Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/Mmux_pkt_
+len_counter121_SW0" (ROM) removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_ecrc_gen_en" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[14]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[13]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[12]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[11]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[10]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[9]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[8]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_link_partner_gen2_supported" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[11]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[10]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[9]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[8]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_npd[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_initial_link_width[2]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_initial_link_width[1]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_initial_link_width[0]" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_nph[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_corr_err_received" is loadless
+and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_bridge_serr_en" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_pm_pme" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_pmcsr_pme_en" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/tx_err_drop" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_deassert_int_a" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[15]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[14]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[13]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[11]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lstatus[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_deassert_int_b" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_deassert_int_c" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[11]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[10]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[9]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[8]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_pd[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_deassert_int_d" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_pme_to_ack" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_corr_err_reporting_en" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[7]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[6]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[5]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[4]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[3]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[2]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[1]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/fc_ph[0]" is loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_link_upcfg_cap" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_command[10]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_command[8]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_command[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_command[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_command[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_msienable" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_interrupt_msixenable" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_tx_pm_state[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_tx_pm_state[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_tx_pm_state[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_rd_wr_done" is loadless and has been
+removed.
+ Loadless block "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_mgmt_rd_wr_done1_INV_0" (BUF)
+removed.
+  The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_mgmt_rd_wr_done_n" is loadless
+and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_non_fatal_err_received" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_vc_tcvc_map[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_directed_change_done" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_fatal_err_received" is loadless
+and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_setslotpowerlimit" is loadless
+and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_non_fatal_err_reporting_en" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_root_control_syserr_fatal_err_en" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[11]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[10]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[9]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[8]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_lcommand[0]" is loadless and has been
+removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[19]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_19" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[19]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT51" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/N161" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/null_is_e
+of<1>14_SW5_SW1" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/N160" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/null_is_e
+of<1>14_SW5_SW0" (ROM) removed.
+      The signal "pcie/pcie_7x_v1_8_i/N124" is loadless and has been removed.
+       Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_null_gen_inst/pkt_len_c
+ounter[11]_GND_6_o_equal_17_o<11>1_SW0" (ROM) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[18]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_18" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[14]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_14" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[14]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT21" (ROM) removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsof_
+prev" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsof_
+prev" (SFF) removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsrc_
+dsc_prev" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsrc_
+dsc_prev" (SFF) removed.
+      The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsrc_
+dsc_dsc_flag_OR_3_o" is loadless and has been removed.
+       Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rsrc_
+dsc_dsc_flag_OR_3_o1" (ROM) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[8]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_8" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[8]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT151" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[6]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[6]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_6" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[7]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_7" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[7]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT141" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[5]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[5]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_5" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[6]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_6" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[6]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT131" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[4]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[4]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_4" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[5]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_5" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[5]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT121" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[3]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[3]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_3" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[4]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_4" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[4]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT111" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[2]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[2]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_2" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[3]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_3" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[3]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT101" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[1]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[1]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_1" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[2]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_2" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[2]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT91" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rbar_hit[0]" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev[0]" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rbar_
+hit_prev_0" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[1]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_1" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[1]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT61" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_rerrfwd" is loadless and has been
+removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rerrf
+wd_prev" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_rerrf
+wd_prev" (SFF) removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser[0]" is loadless and has been removed.
+ Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/m_axis_rx
+_tuser_0" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/is_eof[4]
+_null_is_eof[4]_mux_18_OUT[0]" is loadless and has been removed.
+   Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/Mmux_is_e
+of[4]_null_is_eof[4]_mux_18_OUT16" (ROM) removed.
+    The signal "pcie/pcie_7x_v1_8_i/pcie_top_i/trn_recrc_err" is loadless and has
+been removed.
+    The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_recrc
+_err_prev" is loadless and has been removed.
+     Loadless block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/rx_inst/rx_pipeline_inst/trn_recrc
+_err_prev" (SFF) removed.
+The signal "pcie/pcie_7x_v1_8_i/PIPE_RXOUTCLK_OUT[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/PIPE_RXOUTCLK_OUT[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/PIPE_RXOUTCLK_OUT[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/PIPE_RXOUTCLK_OUT[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_assert_int_a" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_sel_lnk_rate" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_assert_int_b" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_err_fatal" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[11]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[10]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[9]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[8]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_dcommand2[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_assert_int_c" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_msg_received_assert_int_d" is loadless and
+has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_root_control_pme_int_en" is loadless and has
+been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_aer_rooterr_fatal_err_reporting_en" is
+loadless and has been removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[31]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[30]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[29]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[28]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[27]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[26]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[25]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[24]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[23]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[22]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[21]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[20]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[19]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[18]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[17]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[16]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[15]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[14]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[13]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[12]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[11]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[10]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[9]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[8]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[7]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[6]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[5]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[4]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[3]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[2]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/cfg_mgmt_do[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_rx_pm_state[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_rx_pm_state[0]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_link_gen2_cap" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_sel_lnk_width[1]" is loadless and has been
+removed.
+The signal "pcie/pcie_7x_v1_8_i/pl_sel_lnk_width[0]" is loadless and has been
+removed.
+The signal
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is loadless and has been removed.
+ Loadless block
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+The signal
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg[0]" is loadless and
+has been removed.
+ Loadless block
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_0" (FF) removed.
+  The signal
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D[0]" is loadless and has
+been removed.
+   Loadless block
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0" (FF) removed.
+    The signal
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D[0]" is loadless and has
+been removed.
+     Loadless block
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0" (FF) removed.
+      The signal
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/RD_PNTR[0]_RD_PNTR[1]_XOR_64_o" is loadless and has
+been removed.
+       Loadless block
+"pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+tv_or_sync_fifo.gcx.clkx/Mxor_RD_PNTR[0]_RD_PNTR[1]_XOR_64_o_xo<0>1" (ROM)
+removed.
+The signal "pcie/app/gen3.psg3/user_wr_fifo_1/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen3.psg3/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen3.psg3/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen3.psg3/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen3.psg3/user_wr_fifo_2/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen3.psg3/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen3.psg3/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen3.psg3/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen4.psg4/user_wr_fifo_1/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen4.psg4/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen4.psg4/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen4.psg4/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen4.psg4/user_wr_fifo_2/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen4.psg4/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen4.psg4/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen4.psg4/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen1.psg1/user_rd_fifo/m_axis_tvalid" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.axis_m_axis_tv
+alid1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" (FF) removed.
+    The signal
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o" is loadless and has been removed.
+     Loadless block
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o1" (ROM) removed.
+      The signal
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" is loadless and has been
+removed.
+       Loadless block
+"pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" (FF) removed.
+The signal "pcie/app/gen1.psg1/user_wr_fifo_1/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen1.psg1/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen1.psg1/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen1.psg1/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen1.psg1/user_wr_fifo_2/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen1.psg1/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen1.psg1/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen1.psg1/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen2.psg2/user_rd_fifo/m_axis_tvalid" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.axis_m_axis_tv
+alid1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" (FF) removed.
+    The signal
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o" is loadless and has been removed.
+     Loadless block
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o1" (ROM) removed.
+      The signal
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" is loadless and has been
+removed.
+       Loadless block
+"pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" (FF) removed.
+The signal "pcie/app/gen3.psg3/user_rd_fifo/m_axis_tvalid" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.axis_m_axis_tv
+alid1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" (FF) removed.
+    The signal
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o" is loadless and has been removed.
+     Loadless block
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o1" (ROM) removed.
+      The signal
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" is loadless and has been
+removed.
+       Loadless block
+"pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" (FF) removed.
+The signal "pcie/app/gen2.psg2/user_wr_fifo_1/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen2.psg2/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen2.psg2/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen2.psg2/user_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen2.psg2/user_wr_fifo_2/s_axis_tready" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen2.psg2/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_
+tready1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen2.psg2/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen2.psg2/user_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+The signal "pcie/app/gen4.psg4/user_rd_fifo/m_axis_tvalid" is loadless and has
+been removed.
+ Loadless block
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.axis_m_axis_tv
+alid1_INV_0" (BUF) removed.
+  The signal
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" is loadless and has been
+removed.
+   Loadless block
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i" (FF) removed.
+    The signal
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o" is loadless and has been removed.
+     Loadless block
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/going_empty_fwft_leaving_empty_fwft_OR_
+8_o1" (ROM) removed.
+      The signal
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" is loadless and has been
+removed.
+       Loadless block
+"pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/g
+rf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb" (FF) removed.
+The signal "ult/ula/adpt_rd_fifo_4/s_axis_tready" is sourceless and has been
+removed.
+The signal
+"ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_tready1_INV
+_0" (BUF) removed.
+The signal "ult/ula/adpt_rd_fifo_3/s_axis_tready" is sourceless and has been
+removed.
+The signal
+"ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_tready1_INV
+_0" (BUF) removed.
+The signal "ult/ula/adpt_rd_fifo_2/s_axis_tready" is sourceless and has been
+removed.
+The signal
+"ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_tready1_INV
+_0" (BUF) removed.
+The signal "ult/ula/adpt_rd_fifo_1/s_axis_tready" is sourceless and has been
+removed.
+The signal
+"ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.axis_s_axis_tready1_INV
+_0" (BUF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[56]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[48]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[40]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[32]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[24]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[16]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[8]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[0]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[56]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_56" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[48]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_48" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[40]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_40" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[32]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_32" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[24]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_24" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[16]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_16" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[8]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_8" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[0]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_0" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[56]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[48]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[40]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[32]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[24]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[16]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[8]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[0]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[56]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_56" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[48]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_48" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[40]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_40" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[32]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_32" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[24]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_24" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[16]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_16" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[8]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_8" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[0]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_0" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[56]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[48]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[40]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[32]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[24]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[16]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[8]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[0]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[56]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_56" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[48]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_48" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[40]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_40" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[32]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_32" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[24]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_24" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[16]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_16" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[8]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_8" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[0]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_0" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[56]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[48]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[40]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[32]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[24]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[16]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[8]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i[0]" is sourceless and has been removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[56]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_56" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[48]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_48" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[40]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_40" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[32]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_32" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[24]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_24" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[16]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_16" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[8]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_8" (FF) removed.
+The signal
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/doutb_
+i[0]" is sourceless and has been removed.
+ Sourceless block
+"ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.mem/dout_i_0" (FF) removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "pcie/pcie_7x_v1_8_i/cfg_to_turnoff" is unused and has been removed.
+The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_
+ctl_inst/L23_thrtl_ep.x7_L23_thrtl_ep.reg_to_turnoff" is unused and has been
+removed.
+ Unused block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_
+ctl_inst/L23_thrtl_ep.x7_L23_thrtl_ep.reg_to_turnoff" (SFF) removed.
+  The signal
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_
+ctl_inst/L23_thrtl_ep.x7_L23_thrtl_ep.reg_to_turnoff_glue_set" is unused and has
+been removed.
+   Unused block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_
+ctl_inst/L23_thrtl_ep.x7_L23_thrtl_ep.reg_to_turnoff_glue_set" (ROM) removed.
+The signal "pcie/pcie_7x_v1_8_i/N94" is unused and has been removed.
+ Unused block
+"pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl_
+ctl_inst/ecrc_pause_enabled.tx_ecrc_pkt_SW0" (ROM) removed.
+Unused block
+"ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+Unused block
+"ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+Unused block
+"ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+Unused block
+"ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gnt
+v_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		pcie/XST_GND
+VCC 		pcie/XST_VCC
+GND
+		pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/g
+ntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/vali
+d.cstr/XST_GND
+VCC
+		pcie/app/config_ctrl/config_buffer/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/g
+ntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/vali
+d.cstr/XST_VCC
+GND 		pcie/app/config_ctrl/config_buffer/XST_GND
+VCC 		pcie/app/config_ctrl/config_buffer/XST_VCC
+GND
+		pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_GND
+VCC
+		pcie/app/gen1.psg1/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_VCC
+GND 		pcie/app/gen1.psg1/user_rd_fifo/XST_GND
+VCC 		pcie/app/gen1.psg1/user_rd_fifo/XST_VCC
+GND 		pcie/app/gen1.psg1/user_wr_fifo_1/XST_GND
+VCC 		pcie/app/gen1.psg1/user_wr_fifo_1/XST_VCC
+GND 		pcie/app/gen1.psg1/user_wr_fifo_2/XST_GND
+VCC 		pcie/app/gen1.psg1/user_wr_fifo_2/XST_VCC
+GND
+		pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_GND
+VCC
+		pcie/app/gen2.psg2/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_VCC
+GND 		pcie/app/gen2.psg2/user_rd_fifo/XST_GND
+VCC 		pcie/app/gen2.psg2/user_rd_fifo/XST_VCC
+GND 		pcie/app/gen2.psg2/user_wr_fifo_1/XST_GND
+VCC 		pcie/app/gen2.psg2/user_wr_fifo_1/XST_VCC
+GND 		pcie/app/gen2.psg2/user_wr_fifo_2/XST_GND
+VCC 		pcie/app/gen2.psg2/user_wr_fifo_2/XST_VCC
+GND
+		pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_GND
+VCC
+		pcie/app/gen3.psg3/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_VCC
+GND 		pcie/app/gen3.psg3/user_rd_fifo/XST_GND
+VCC 		pcie/app/gen3.psg3/user_rd_fifo/XST_VCC
+GND 		pcie/app/gen3.psg3/user_wr_fifo_1/XST_GND
+VCC 		pcie/app/gen3.psg3/user_wr_fifo_1/XST_VCC
+GND 		pcie/app/gen3.psg3/user_wr_fifo_2/XST_GND
+VCC 		pcie/app/gen3.psg3/user_wr_fifo_2/XST_VCC
+GND
+		pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_GND
+VCC
+		pcie/app/gen4.psg4/user_rd_fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/
+grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_
+gen/valid.cstr/XST_VCC
+GND 		pcie/app/gen4.psg4/user_rd_fifo/XST_GND
+VCC 		pcie/app/gen4.psg4/user_rd_fifo/XST_VCC
+GND 		pcie/app/gen4.psg4/user_wr_fifo_1/XST_GND
+VCC 		pcie/app/gen4.psg4/user_wr_fifo_1/XST_VCC
+GND 		pcie/app/gen4.psg4/user_wr_fifo_2/XST_GND
+VCC 		pcie/app/gen4.psg4/user_wr_fifo_2/XST_VCC
+GND 		pcie/pcie_7x_v1_8_i/XST_GND
+VCC 		pcie/pcie_7x_v1_8_i/XST_VCC
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_atomic_egress_blocked_INV_101_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_cor_INV_91_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_cpl_abort_INV_92_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_cpl_timeout_INV_93_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_cpl_unexpect_INV_94_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_ecrc_INV_95_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_internal_cor_INV_104_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_internal_uncor_INV_103_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_locked_INV_96_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_malformed_INV_99_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_mc_blocked_INV_102_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_norecovery_INV_105_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_poisoned_INV_100_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_posted_INV_97_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_err_ur_INV_98_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_interrupt_assert_INV_106_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_interrupt_stat_INV_108_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_byte_en[3]_inv_11_OUT<0>1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_byte_en[3]_inv_11_OUT<1>1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_byte_en[3]_inv_11_OUT<2>1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_byte_en[3]_inv_11_OUT<3>1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_rd_en_INV_113_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_wr_en_INV_114_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_wr_readonly_INV_115_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_mgmt_wr_rw1c_as_rw_INV_116_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_pm_force_state_en_INV_112_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_pm_halt_aspm_l0s_INV_110_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_pm_halt_aspm_l1_INV_111_o1_INV_0
+INV 		pcie/pcie_7x_v1_8_i/cfg_pm_wake_INV_109_o1_INV_0
+LUT6
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl
+_ctl_inst/ecrc_pause_enabled.tx_ecrc_pkt
+   optimized to 0
+LUT2
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl
+_ctl_inst/ppm_L23_trig1
+   optimized to 0
+FDR
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/thrtl_ctl_enabled.tx_thrl
+_ctl_inst/reg_turnoff_ok
+   optimized to 0
+FDR
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/tx_pipeline_inst/reg_tuse
+r_0
+   optimized to 0
+FDR
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/tx_pipeline_inst/reg_tuse
+r_1
+   optimized to 0
+FDR
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/tx_pipeline_inst/reg_tuse
+r_2
+   optimized to 0
+FDR
+		pcie/pcie_7x_v1_8_i/pcie_top_i/axi_basic_top/tx_inst/tx_pipeline_inst/reg_tuse
+r_3
+   optimized to 0
+INV 		pcie/pcie_7x_v1_8_i/pcie_top_i/cfg_trn_pending_INV_86_o1_INV_0
+GND 		ult/XST_GND
+VCC 		ult/XST_VCC
+GND
+		ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_rd_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_rd_fifo_1/XST_GND
+VCC 		ult/ula/adpt_rd_fifo_1/XST_VCC
+GND
+		ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_rd_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_rd_fifo_2/XST_GND
+VCC 		ult/ula/adpt_rd_fifo_2/XST_VCC
+GND
+		ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_rd_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_rd_fifo_3/XST_GND
+VCC 		ult/ula/adpt_rd_fifo_3/XST_VCC
+GND
+		ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_rd_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_rd_fifo_4/XST_GND
+VCC 		ult/ula/adpt_rd_fifo_4/XST_VCC
+GND
+		ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_wr_fifo_1/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_wr_fifo_1/XST_GND
+VCC 		ult/ula/adpt_wr_fifo_1/XST_VCC
+GND
+		ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_wr_fifo_2/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_wr_fifo_2/XST_GND
+VCC 		ult/ula/adpt_wr_fifo_2/XST_VCC
+GND
+		ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_wr_fifo_3/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_wr_fifo_3/XST_GND
+VCC 		ult/ula/adpt_wr_fifo_3/XST_VCC
+GND
+		ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_GND
+VCC
+		ult/ula/adpt_wr_fifo_4/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gn
+tv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid
+.cstr/XST_VCC
+GND 		ult/ula/adpt_wr_fifo_4/XST_GND
+VCC 		ult/ula/adpt_wr_fifo_4/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| heartbeat                          | IOB              | OUTPUT    | LVCMOS18             |       | 12       | SLOW |              |          |          |
+| pci_exp_rxn[0]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxn[1]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxn[2]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxn[3]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxp[0]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxp[1]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxp[2]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_rxp[3]                     | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| pci_exp_txn[0]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txn[1]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txn[2]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txn[3]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txp[0]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txp[1]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txp[2]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pci_exp_txp[3]                     | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| pcie_link_status                   | IOB              | OUTPUT    | LVCMOS18             |       | 12       | SLOW |              |          |          |
+| sys_clk_n                          | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| sys_clk_p                          | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| sys_reset_n                        | IOB              | INPUT     | LVCMOS18             |       |          |      |              | PULLUP   |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  Preserved Partitions:
+
+
+  Implemented Partitions:
+
+    Partition "/top":
+Attribute STATE set to IMPLEMENT.
+
+    Partition "/top/ult" (Reconfigurable Module "thresholder"):
+Attribute STATE set to IMPLEMENT.
+
+-------------------------------
+
+Partition Resource Summary:
+---------------------------
+Resources are reported for each Partition followed in parenthesis by resources
+for the Partition plus all of its descendents.
+
+Partition "/top":
+  State=implement
+  Slice Logic Utilization:
+    Number of Slice Registers:           5,456 (7,049)
+    Number of Slice LUTs:                3,994 (5,213)
+      Number used as logic:              3,987 (5,206)
+      Number used as Memory:                 7 (7)
+  Slice Logic Distribution:
+    Number of occupied Slices:           1,785 (2,523)
+    Number of LUT Flip Flop pairs used:  5,862 (7,840)
+      Number with an unused Flip Flop:   1,264 out of  5,862   21%
+      Number with an unused LUT:         1,290 out of  5,862   22%
+      Number of fully used LUT-FF pairs: 3,308 out of  5,862   56%
+  IO Utilization:
+    Number of bonded IOBs:                   3 (3)
+  Number of RAMB36E1/FIFO36E1s:             18 (26)
+    Number using RAMB36E1 only:             18
+    Number using FIFO36E1 only:              0
+  Number of BUFG/BUFGCTRLs:                  8 (8)
+    Number using BUFGs:                      7
+    Number using BUFGCTRLs:                  1
+  Number of GTXE2_CHANNEL:                   4 (4)
+  Number of GTXE2_COMMON:                    1 (1)
+  Number of IBUFDS_GTE2:                     1 (1)
+  Number of ICAP:                            1 (1)
+  Number of MMCME2_ADV:                      2 (2)
+  Number of PCIE_2_1:                        1 (1)
+
+Partition "/top/ult" (Reconfigurable Module "thresholder") (Area Group "pblock_ult"):
+  State=implement
+  Slice Logic Utilization:
+    Number of Slice Registers:           1,593 (1,593)
+    Number of Slice LUTs:                1,219 (1,219)
+      Number used as logic:              1,219 (1,219)
+  Slice Logic Distribution:
+    Number of occupied Slices:             738 (738)
+    Number of LUT Flip Flop pairs used:  1,978 (1,978)
+      Number with an unused Flip Flop:     720 out of  1,978   36%
+      Number with an unused LUT:           561 out of  1,978   28%
+      Number of fully used LUT-FF pairs:   697 out of  1,978   35%
+  Number of RAMB36E1/FIFO36E1s:              8 (8)
+    Number using RAMB36E1 only:              8
+    Number using FIFO36E1 only:              0
+
+
+Area Group Information
+----------------------
+
+Area Group "pblock_pcie"
+  No COMPRESSION specified for Area Group "pblock_pcie"
+  RANGE: DSP48_X19Y20:DSP48_X19Y59
+  RANGE: RAMB18_X13Y20:RAMB18_X14Y59
+  RANGE: RAMB36_X13Y10:RAMB36_X14Y29
+  RANGE: SLICE_X194Y50:SLICE_X221Y149
+  Slice Logic Utilization:
+    Number of Slice Registers:           5,428 out of 21,200   25%
+    Number of Slice LUTs:                3,967 out of 10,600   37%
+      Number used as logic:              3,960
+      Number used as Memory:                 7
+  Slice Logic Distribution:
+    Number of occupied Slices:           1,778 out of  2,650   67%
+    Number of LUT Flip Flop pairs used:  5,834
+      Number with an unused Flip Flop:   1,264 out of  5,834   21%
+      Number with an unused LUT:         1,290 out of  5,834   22%
+      Number of fully used LUT-FF pairs: 3,280 out of  5,834   56%
+  Number of RAMB36E1/FIFO36E1s:             12 out of     40   30%
+    Number using RAMB36E1 only:             12
+    Number using FIFO36E1 only:              0
+  Number of BUFG/BUFGCTRLs:                  8
+    Number using BUFGs:                      7
+    Number using BUFGCTRLs:                  1
+  Number of GTXE2_COMMON:                    1
+  Number of ICAP:                            1
+  Number of MMCME2_ADV:                      1
+
+Area Group "pblock_ult"
+  No COMPRESSION specified for Area Group "pblock_ult"
+  INCLUSIVE=ROUTE
+  RANGE: DSP48_X0Y0:DSP48_X18Y139
+  RANGE: RAMB18_X0Y0:RAMB18_X12Y139
+  RANGE: RAMB36_X0Y0:RAMB36_X12Y69
+  RANGE: SLICE_X2Y0:SLICE_X193Y349
+  Slice Logic Utilization:
+    Number of Slice Registers:           1,593 out of 525,600    1%
+    Number of Slice LUTs:                1,219 out of 262,800    1%
+      Number used as logic:              1,219
+  Slice Logic Distribution:
+    Number of occupied Slices:             738 out of 65,700    1%
+    Number of LUT Flip Flop pairs used:  1,978
+      Number with an unused Flip Flop:     720 out of  1,978   36%
+      Number with an unused LUT:           561 out of  1,978   28%
+      Number of fully used LUT-FF pairs:   697 out of  1,978   35%
+
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

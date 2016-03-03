@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=E:\mygit\dyract\hw\vc707\synth\top.ncd
-OUTFILE=E:\mygit\dyract\hw\vc707\synth\top.bit
-FAMILY=Virtex7
-PART=xc7vx485t-2ffg1761
-WORKINGDIR=E:\mygit\dyract\hw\vc707\synth
-LICENSE=ISE
-USER_INFO=174456553_1777502517_210587570_567
