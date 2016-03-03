@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<Project Name="inverter" FileVersion="1.2" ProjectVersion="2.0">
-	<Partition Name="/top" State="implement" ImportLocation="None">
-		<Partition Name="/top/ult" State="implement" ImportLocation="NONE" Reconfigurable="true" ReconfigModuleName="user_logic">
-		</Partition>
-	</Partition>
-</Project>
-

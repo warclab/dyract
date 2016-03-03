@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<Project Name="prime" FileVersion="1.2" ProjectVersion="2.0">
-	<Partition Name="/top" State="implement" ImportLocation="NONE">
-		<Partition Name="/top/ult" State="implement" ImportLocation="NONE" Reconfigurable="true" ReconfigModuleName="blank">
-		</Partition>
-	</Partition>
-</Project>
-
