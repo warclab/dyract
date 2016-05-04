@@ -112,8 +112,8 @@ module rx_engine  #(
                 IDLE : begin
                     m_axis_rx_tready <=  1'b1;                  // Indicate ready to accept TLPs
                     reg_data_valid_o <=  1'b0;
-						  user_wr_req_o    <=  1'b0;
-						  req_len_o        <=  m_axis_rx_tdata[9:0];  // Place the packet info on the bus for Tx engine
+                    user_wr_req_o    <=  1'b0;
+                    req_len_o        <=  m_axis_rx_tdata[9:0];  // Place the packet info on the bus for Tx engine
                     req_attr_o       <=  m_axis_rx_tdata[13:12];
                     req_ep_o         <=  m_axis_rx_tdata[14];
                     req_td_o         <=  m_axis_rx_tdata[15];
@@ -122,15 +122,15 @@ module rx_engine  #(
                     req_tag_o        <=  m_axis_rx_tdata[47:40];
                     if (sop) 
                     begin                                       // Valid data on the bus
-						      if(m_axis_rx_tdata[30:24] == MEM_RD)      // If memory ready request
+						if(m_axis_rx_tdata[30:24] == MEM_RD)      // If memory ready request
                            state    <=  SEND_DATA;
-						      else if(m_axis_rx_tdata[30:24] == MEM_WR) // If memory write request	 
-							      state    <=  WR_DATA; 
+						else if(m_axis_rx_tdata[30:24] == MEM_WR) // If memory write request	 
+						    state    <=  WR_DATA; 
                         else if(m_axis_rx_tdata[30:24] == CPLD)   // If completion packet
-								begin
-                           state    <=  RX_DATA;
-									lock_tag <=  1'b1;
-								end	
+						begin
+                            state    <=  RX_DATA;
+							lock_tag <=  1'b1;
+						end	
                     end
                 end
                 SEND_DATA: begin
@@ -153,7 +153,7 @@ module rx_engine  #(
                     end
                 end
                 WAIT_FPGA_DATA:begin
-					     fpga_reg_rd_o    <=  1'b0; 
+					fpga_reg_rd_o    <=  1'b0; 
                     if(fpga_reg_rd_ack_i)
                     begin 
                         req_compl_wd_o   <=  1'b1;        //Request Tx engine to send data
@@ -175,7 +175,7 @@ module rx_engine  #(
                     begin
                        state            <=  IDLE;
                        req_compl_wd_o   <=  1'b0;
-							  m_axis_rx_tready <=  1'b1;
+					   m_axis_rx_tready <=  1'b1;
                     end
                 end
 				WR_DATA:begin
@@ -183,7 +183,7 @@ module rx_engine  #(
                     user_wr_req_o    <=   1'b0;
                     if (m_axis_rx_tvalid && m_axis_rx_tlast)
                     begin
-						      m_axis_rx_tready <=  1'b0;
+						//m_axis_rx_tready <=  1'b0;
                         reg_data_o       <=   m_axis_rx_tdata[63:32];
                         reg_addr_o       <=   m_axis_rx_tdata[9:0];
                         user_data_o      <=   m_axis_rx_tdata[63:32];
@@ -196,15 +196,16 @@ module rx_engine  #(
                         begin
                             user_wr_req_o    <=   1'b1;
                         end
+                        state                <=   IDLE;   
                     end
-                    if (fpga_reg_wr_ack_i | user_wr_ack)
+                    /*if (fpga_reg_wr_ack_i | user_wr_ack)
                     begin
                         state            <=   IDLE;   
                         m_axis_rx_tready <=   1'b1;								
-                    end
+                    end*/
 				end
             RX_DATA:begin
-				    lock_tag <= 1'b0;
+				lock_tag <= 1'b0;
                 if(m_axis_rx_tvalid && m_axis_rx_tlast)
                 begin
                     rcv_data  <=  1'b0;
